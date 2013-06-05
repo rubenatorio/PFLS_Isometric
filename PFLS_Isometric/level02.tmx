@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="isometric" width="50" height="50" tilewidth="64" tileheight="32">
+ <tileset firstgid="1" name="iso-64x64-outside" tilewidth="64" tileheight="32">
+  <image source="iso-64x64-outside.png" width="640" height="1024"/>
+ </tileset>
+ <layer name="floor" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztz7ENgDAMAEEPkP3XYTUapNBAZclxcsX1/yMiBgAAAABAc9ejuiPj4a26KePBhw8f/x/dXnys5YSPTi87PPhY0y4fXy/VTRk/1R0ATDeOh7vQ
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztl7sOwjAMRYv4ADYeG48N6MZj5IeY+fduLEaKolpxiN06yj1LH2qlex27N+06AADQZZhbgCLLxdwK2qSlHvLsNVcb5/VdrKScWNvAnKf4aIhRJvT27zdrijXi6rxV/s5arVGoP67zhq6PlWTGWJ+s6d6BjleBF65vLPtJMq970n6h40Pghesby5mXzOuZnrk76K1VoYYbvf9y4GXnQIMWJ0MvqXnTnvXe0Es4b2O6tWf9OdH+z8O+pKX/Jc/79lys102aGTXUVJoZqZqW5qgGJZkR6veQo7mZwem3zFEpqcyI4fRb5qgVnP7cmnigdv0htesHAAAAAAAAgB9fhHQXvg==
+  </data>
+ </layer>
+</map>

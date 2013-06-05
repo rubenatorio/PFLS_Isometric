@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="isometric" width="10" height="10" tilewidth="64" tileheight="32">
+ <tileset firstgid="1" name="iso-64x64-outside" tilewidth="64" tileheight="32">
+  <image source="../Downloads/iso-64x64-outside.png" width="640" height="1024"/>
+ </tileset>
+ <layer name="floor" width="10" height="10">
+  <properties>
+   <property name="Collidable" value="True"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzjYWBg4BnFgwYDALSdBLE=
+  </data>
+ </layer>
+ <layer name="edges" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBggwEgkpraZQPCfSOPQ1f1DwvjUgQAHIwLjUwcCQowIDAC1qQde
+  </data>
+ </layer>
+ <layer name="decor" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYKA9+IWG8QEWRlRMKhAA6kkjYG8qlJYCqi0gYG8+lFYhwS16JKi1QFMLAHXHClw=
+  </data>
+ </layer>
+</map>
