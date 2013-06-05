@@ -38,6 +38,8 @@
     
     [self.navigationController pushViewController:viewController animated:YES];
     
+    //[[GameManager sharedManager] startGame];
+    
 }
 - (void)dealloc {
     [super dealloc];

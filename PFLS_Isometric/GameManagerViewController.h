@@ -10,8 +10,7 @@
 #import "cocos2d.h"
 
 
-@interface GameManagerViewController : UIViewController
-{
+@interface GameManagerViewController : UIViewController {
     CCGLView * _glView;
 }
 

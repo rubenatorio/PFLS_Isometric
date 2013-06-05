@@ -8,6 +8,8 @@
 
 #import "GameManager.h"
 #import "GameManagerViewController.h"
+#import "GameConstants.h"
+#import "TestLevelLayer.h"
 
 @implementation GameManager
 
@@ -33,6 +35,29 @@ static GameManager * _gameManager = nil;
     [_viewController startCocos2d];
     
     return _viewController;
+}
+
+-(void) startGame
+{
+    [self runLevelWithID:kTEST_LEVEL_ID];
+}
+
+-(void) runLevelWithID:(unsigned) theID
+{
+    CCScene * scene;
+    
+    switch (theID)
+    {
+        case kTEST_LEVEL_ID:
+            scene = [TestLevelLayer scene];
+            break;
+            
+        default:
+            NSAssert(NO, @"Invalid level id");
+            break;
+    }
+    
+    if (scene) [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5f scene:scene withColor:ccWHITE]];
 }
 
 #pragma mark Memory Management

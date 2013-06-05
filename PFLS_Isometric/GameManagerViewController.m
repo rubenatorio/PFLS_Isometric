@@ -23,11 +23,6 @@
                                numberOfSamples:0];
         
     [[CCDirector sharedDirector] setView:_glView];
-    
-    [[CCDirector sharedDirector] runWithScene:[IntroLayer scene]];
-    
-    [self.view insertSubview:_glView atIndex:0];
-    
 }
 
 - (void)viewDidLoad
@@ -36,6 +31,9 @@
     
     NSLog(@"Adding the GL View to the main view...");
     
+    [[CCDirector sharedDirector] runWithScene:[IntroLayer scene]];
+    
+    [self.view insertSubview:_glView atIndex:0];
 }
 
 - (void)didReceiveMemoryWarning

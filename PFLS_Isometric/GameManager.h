@@ -21,4 +21,8 @@
 
 -(UIViewController *) startCocos2d;
 
+-(void) startGame;
+
+-(void) runLevelWithID:(unsigned) theID;
+
 @end

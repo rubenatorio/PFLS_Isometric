@@ -11,6 +11,8 @@
 		E008DD26175F935600720CC5 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E008DD24175F935600720CC5 /* MainMenuViewController.xib */; };
 		E04012D6175F99E400AF0081 /* GameManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E04012D5175F99E400AF0081 /* GameManagerViewController.m */; };
 		E04012D9175F9E8600AF0081 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E04012D8175F9E8600AF0081 /* GameManager.m */; };
+		E04012DF175FDE5400AF0081 /* FlyingLaserShark.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E04012DE175FDE5400AF0081 /* FlyingLaserShark.jpg */; };
+		E04012E1175FE26800AF0081 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E04012E0175FE26800AF0081 /* Default-568h@2x.png */; };
 		E0A7CE6D174D521E00C7D631 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A7CE6C174D521E00C7D631 /* QuartzCore.framework */; };
 		E0A7CE6F174D521E00C7D631 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A7CE6E174D521E00C7D631 /* OpenGLES.framework */; };
 		E0A7CE71174D521E00C7D631 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A7CE70174D521E00C7D631 /* OpenAL.framework */; };
@@ -153,6 +155,8 @@
 		E04012D7175F9E8600AF0081 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
 		E04012D8175F9E8600AF0081 /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
 		E04012DA175FBCDE00AF0081 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		E04012DE175FDE5400AF0081 /* FlyingLaserShark.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FlyingLaserShark.jpg; sourceTree = "<group>"; };
+		E04012E0175FE26800AF0081 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		E094457D175E8A0B004366AD /* GameConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConstants.h; sourceTree = "<group>"; };
 		E0A7CE69174D521E00C7D631 /* PFLS_Isometric.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PFLS_Isometric.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0A7CE6C174D521E00C7D631 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -526,6 +530,7 @@
 		E0A7CE7F174D521F00C7D631 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E04012DE175FDE5400AF0081 /* FlyingLaserShark.jpg */,
 				E0A7D01D174EBBA300C7D631 /* Invader2.png */,
 				E0A7D013174D61B000C7D631 /* TMX Files */,
 				E0A7D014174D61BB00C7D631 /* Tilesets */,
@@ -880,6 +885,7 @@
 		E0A7D004174D52A700C7D631 /* Default Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E04012E0175FE26800AF0081 /* Default-568h@2x.png */,
 				E04012DA175FBCDE00AF0081 /* Default.png */,
 				E0A7CE82174D522000C7D631 /* Default-Landscape~ipad.png */,
 				E0A7CE84174D522000C7D631 /* fps_images.png */,
@@ -918,6 +924,8 @@
 		E0A7D00D174D615400C7D631 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
+				E0A7CFFC174D522100C7D631 /* IntroLayer.h */,
+				E0A7CFFD174D522100C7D631 /* IntroLayer.m */,
 				E0A7D005174D532700C7D631 /* TestLevelLayer.h */,
 				E0A7D006174D532700C7D631 /* TestLevelLayer.m */,
 			);
@@ -927,8 +935,6 @@
 		E0A7D00E174D616100C7D631 /* Game Manager */ = {
 			isa = PBXGroup;
 			children = (
-				E0A7CFFC174D522100C7D631 /* IntroLayer.h */,
-				E0A7CFFD174D522100C7D631 /* IntroLayer.m */,
 				E04012D7175F9E8600AF0081 /* GameManager.h */,
 				E04012D8175F9E8600AF0081 /* GameManager.m */,
 			);
@@ -1028,6 +1034,8 @@
 				E0A7D018174E9F1900C7D631 /* level02.tmx in Resources */,
 				E0A7D01E174EBBA300C7D631 /* Invader2.png in Resources */,
 				E008DD26175F935600720CC5 /* MainMenuViewController.xib in Resources */,
+				E04012DF175FDE5400AF0081 /* FlyingLaserShark.jpg in Resources */,
+				E04012E1175FE26800AF0081 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

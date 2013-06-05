@@ -20,4 +20,8 @@
 #define kPLAYER_PRIORITY 0
 #define kLEVEL_LAYER_PRIORITY 1
 
+/* Game Level id's */
+
+#define kTEST_LEVEL_ID 1000
+
 #endif
