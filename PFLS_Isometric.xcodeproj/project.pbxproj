@@ -131,11 +131,18 @@
 		E0A7CFF0174D522100C7D631 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = E0A7CFEF174D522100C7D631 /* vec4.c */; };
 		E0A7CFF5174D522100C7D631 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A7CFF4174D522100C7D631 /* main.m */; };
 		E0A7CFF8174D522100C7D631 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A7CFF7174D522100C7D631 /* AppDelegate.m */; };
-		E0A7CFFB174D522100C7D631 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A7CFFA174D522100C7D631 /* HelloWorldLayer.m */; };
 		E0A7CFFE174D522100C7D631 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A7CFFD174D522100C7D631 /* IntroLayer.m */; };
+		E0A7D007174D532700C7D631 /* TestLevelLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A7D006174D532700C7D631 /* TestLevelLayer.m */; };
+		E0A7D00A174D5C5100C7D631 /* IsometricCoordinateConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A7D009174D5C5100C7D631 /* IsometricCoordinateConverter.m */; };
+		E0A7D011174D61AC00C7D631 /* map01.tmx in Resources */ = {isa = PBXBuildFile; fileRef = E0A7D00F174D61AC00C7D631 /* map01.tmx */; };
+		E0A7D012174D61AC00C7D631 /* iso-64x64-outside.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A7D010174D61AC00C7D631 /* iso-64x64-outside.png */; };
+		E0A7D018174E9F1900C7D631 /* level02.tmx in Resources */ = {isa = PBXBuildFile; fileRef = E0A7D017174E9F1900C7D631 /* level02.tmx */; };
+		E0A7D01C174EBB4900C7D631 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A7D01B174EBB4900C7D631 /* Player.m */; };
+		E0A7D01E174EBBA300C7D631 /* Invader2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A7D01D174EBBA300C7D631 /* Invader2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E094457D175E8A0B004366AD /* GameConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConstants.h; sourceTree = "<group>"; };
 		E0A7CE69174D521E00C7D631 /* PFLS_Isometric.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PFLS_Isometric.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0A7CE6C174D521E00C7D631 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E0A7CE6E174D521E00C7D631 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -394,10 +401,18 @@
 		E0A7CFF4174D522100C7D631 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E0A7CFF6174D522100C7D631 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E0A7CFF7174D522100C7D631 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E0A7CFF9174D522100C7D631 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		E0A7CFFA174D522100C7D631 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		E0A7CFFC174D522100C7D631 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		E0A7CFFD174D522100C7D631 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
+		E0A7D005174D532700C7D631 /* TestLevelLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLevelLayer.h; sourceTree = "<group>"; };
+		E0A7D006174D532700C7D631 /* TestLevelLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestLevelLayer.m; sourceTree = "<group>"; };
+		E0A7D008174D5C5100C7D631 /* IsometricCoordinateConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsometricCoordinateConverter.h; sourceTree = "<group>"; };
+		E0A7D009174D5C5100C7D631 /* IsometricCoordinateConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsometricCoordinateConverter.m; sourceTree = "<group>"; };
+		E0A7D00F174D61AC00C7D631 /* map01.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map01.tmx; sourceTree = "<group>"; };
+		E0A7D010174D61AC00C7D631 /* iso-64x64-outside.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iso-64x64-outside.png"; sourceTree = "<group>"; };
+		E0A7D017174E9F1900C7D631 /* level02.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = level02.tmx; sourceTree = "<group>"; };
+		E0A7D01A174EBB4900C7D631 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		E0A7D01B174EBB4900C7D631 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		E0A7D01D174EBBA300C7D631 /* Invader2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Invader2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -420,6 +435,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E094457C175E89D4004366AD /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				E094457D175E8A0B004366AD /* GameConstants.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
 		E0A7CE60174D521E00C7D631 = {
 			isa = PBXGroup;
 			children = (
@@ -456,12 +479,12 @@
 		E0A7CE7E174D521F00C7D631 /* PFLS_Isometric */ = {
 			isa = PBXGroup;
 			children = (
-				E0A7CFF6174D522100C7D631 /* AppDelegate.h */,
-				E0A7CFF7174D522100C7D631 /* AppDelegate.m */,
-				E0A7CFF9174D522100C7D631 /* HelloWorldLayer.h */,
-				E0A7CFFA174D522100C7D631 /* HelloWorldLayer.m */,
-				E0A7CFFC174D522100C7D631 /* IntroLayer.h */,
-				E0A7CFFD174D522100C7D631 /* IntroLayer.m */,
+				E0A7D019174EBB2A00C7D631 /* Game Objects */,
+				E0A7D00B174D60C000C7D631 /* Helper Classes */,
+				E0A7D00C174D60D700C7D631 /* App Delegate */,
+				E0A7D00D174D615400C7D631 /* Levels */,
+				E0A7D00E174D616100C7D631 /* Game Manager */,
+				E094457C175E89D4004366AD /* Header Files */,
 				E0A7CE7F174D521F00C7D631 /* Resources */,
 				E0A7CE99174D522000C7D631 /* libs */,
 				E0A7CFF2174D522100C7D631 /* Supporting Files */,
@@ -472,19 +495,10 @@
 		E0A7CE7F174D521F00C7D631 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E0A7CE80174D521F00C7D631 /* Default.png */,
-				E0A7CE82174D522000C7D631 /* Default-Landscape~ipad.png */,
-				E0A7CE84174D522000C7D631 /* fps_images.png */,
-				E0A7CE86174D522000C7D631 /* fps_images-hd.png */,
-				E0A7CE88174D522000C7D631 /* fps_images-ipadhd.png */,
-				E0A7CE8A174D522000C7D631 /* Icon-72.png */,
-				E0A7CE8C174D522000C7D631 /* Icon-Small-50.png */,
-				E0A7CE8E174D522000C7D631 /* Icon-Small.png */,
-				E0A7CE90174D522000C7D631 /* Icon-Small@2x.png */,
-				E0A7CE92174D522000C7D631 /* Icon.png */,
-				E0A7CE94174D522000C7D631 /* Icon@2x.png */,
-				E0A7CE96174D522000C7D631 /* Info.plist */,
-				E0A7CE97174D522000C7D631 /* iTunesArtwork */,
+				E0A7D01D174EBBA300C7D631 /* Invader2.png */,
+				E0A7D013174D61B000C7D631 /* TMX Files */,
+				E0A7D014174D61BB00C7D631 /* Tilesets */,
+				E0A7D004174D52A700C7D631 /* Default Resources */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -832,6 +846,88 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E0A7D004174D52A700C7D631 /* Default Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E0A7CE80174D521F00C7D631 /* Default.png */,
+				E0A7CE82174D522000C7D631 /* Default-Landscape~ipad.png */,
+				E0A7CE84174D522000C7D631 /* fps_images.png */,
+				E0A7CE86174D522000C7D631 /* fps_images-hd.png */,
+				E0A7CE88174D522000C7D631 /* fps_images-ipadhd.png */,
+				E0A7CE8A174D522000C7D631 /* Icon-72.png */,
+				E0A7CE8C174D522000C7D631 /* Icon-Small-50.png */,
+				E0A7CE8E174D522000C7D631 /* Icon-Small.png */,
+				E0A7CE90174D522000C7D631 /* Icon-Small@2x.png */,
+				E0A7CE92174D522000C7D631 /* Icon.png */,
+				E0A7CE94174D522000C7D631 /* Icon@2x.png */,
+				E0A7CE96174D522000C7D631 /* Info.plist */,
+				E0A7CE97174D522000C7D631 /* iTunesArtwork */,
+			);
+			name = "Default Resources";
+			sourceTree = "<group>";
+		};
+		E0A7D00B174D60C000C7D631 /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E0A7D008174D5C5100C7D631 /* IsometricCoordinateConverter.h */,
+				E0A7D009174D5C5100C7D631 /* IsometricCoordinateConverter.m */,
+			);
+			name = "Helper Classes";
+			sourceTree = "<group>";
+		};
+		E0A7D00C174D60D700C7D631 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				E0A7CFF6174D522100C7D631 /* AppDelegate.h */,
+				E0A7CFF7174D522100C7D631 /* AppDelegate.m */,
+			);
+			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		E0A7D00D174D615400C7D631 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				E0A7D005174D532700C7D631 /* TestLevelLayer.h */,
+				E0A7D006174D532700C7D631 /* TestLevelLayer.m */,
+			);
+			name = Levels;
+			sourceTree = "<group>";
+		};
+		E0A7D00E174D616100C7D631 /* Game Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E0A7CFFC174D522100C7D631 /* IntroLayer.h */,
+				E0A7CFFD174D522100C7D631 /* IntroLayer.m */,
+			);
+			name = "Game Manager";
+			sourceTree = "<group>";
+		};
+		E0A7D013174D61B000C7D631 /* TMX Files */ = {
+			isa = PBXGroup;
+			children = (
+				E0A7D017174E9F1900C7D631 /* level02.tmx */,
+				E0A7D00F174D61AC00C7D631 /* map01.tmx */,
+			);
+			name = "TMX Files";
+			sourceTree = "<group>";
+		};
+		E0A7D014174D61BB00C7D631 /* Tilesets */ = {
+			isa = PBXGroup;
+			children = (
+				E0A7D010174D61AC00C7D631 /* iso-64x64-outside.png */,
+			);
+			name = Tilesets;
+			sourceTree = "<group>";
+		};
+		E0A7D019174EBB2A00C7D631 /* Game Objects */ = {
+			isa = PBXGroup;
+			children = (
+				E0A7D01A174EBB4900C7D631 /* Player.h */,
+				E0A7D01B174EBB4900C7D631 /* Player.m */,
+			);
+			name = "Game Objects";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -895,6 +991,10 @@
 				E0A7CE95174D522000C7D631 /* Icon@2x.png in Resources */,
 				E0A7CE98174D522000C7D631 /* iTunesArtwork in Resources */,
 				E0A7CFD6174D522100C7D631 /* ChangeLog in Resources */,
+				E0A7D011174D61AC00C7D631 /* map01.tmx in Resources */,
+				E0A7D012174D61AC00C7D631 /* iso-64x64-outside.png in Resources */,
+				E0A7D018174E9F1900C7D631 /* level02.tmx in Resources */,
+				E0A7D01E174EBBA300C7D631 /* Invader2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1007,8 +1107,10 @@
 				E0A7CFF0174D522100C7D631 /* vec4.c in Sources */,
 				E0A7CFF5174D522100C7D631 /* main.m in Sources */,
 				E0A7CFF8174D522100C7D631 /* AppDelegate.m in Sources */,
-				E0A7CFFB174D522100C7D631 /* HelloWorldLayer.m in Sources */,
 				E0A7CFFE174D522100C7D631 /* IntroLayer.m in Sources */,
+				E0A7D007174D532700C7D631 /* TestLevelLayer.m in Sources */,
+				E0A7D00A174D5C5100C7D631 /* IsometricCoordinateConverter.m in Sources */,
+				E0A7D01C174EBB4900C7D631 /* Player.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1112,6 +1214,7 @@
 				E0A7D003174D522100C7D631 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
