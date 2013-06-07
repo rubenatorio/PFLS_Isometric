@@ -13,6 +13,7 @@
 		E04012D9175F9E8600AF0081 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E04012D8175F9E8600AF0081 /* GameManager.m */; };
 		E04012DF175FDE5400AF0081 /* FlyingLaserShark.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E04012DE175FDE5400AF0081 /* FlyingLaserShark.jpg */; };
 		E04012E1175FE26800AF0081 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E04012E0175FE26800AF0081 /* Default-568h@2x.png */; };
+		E09D2385176260E500151243 /* GameLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = E09D2384176260E500151243 /* GameLevel.m */; };
 		E0A7CE6D174D521E00C7D631 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A7CE6C174D521E00C7D631 /* QuartzCore.framework */; };
 		E0A7CE6F174D521E00C7D631 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A7CE6E174D521E00C7D631 /* OpenGLES.framework */; };
 		E0A7CE71174D521E00C7D631 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A7CE70174D521E00C7D631 /* OpenAL.framework */; };
@@ -158,6 +159,8 @@
 		E04012DE175FDE5400AF0081 /* FlyingLaserShark.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FlyingLaserShark.jpg; sourceTree = "<group>"; };
 		E04012E0175FE26800AF0081 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		E094457D175E8A0B004366AD /* GameConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConstants.h; sourceTree = "<group>"; };
+		E09D2383176260E500151243 /* GameLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLevel.h; sourceTree = "<group>"; };
+		E09D2384176260E500151243 /* GameLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLevel.m; sourceTree = "<group>"; };
 		E0A7CE69174D521E00C7D631 /* PFLS_Isometric.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PFLS_Isometric.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0A7CE6C174D521E00C7D631 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E0A7CE6E174D521E00C7D631 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -928,6 +931,8 @@
 				E0A7CFFD174D522100C7D631 /* IntroLayer.m */,
 				E0A7D005174D532700C7D631 /* TestLevelLayer.h */,
 				E0A7D006174D532700C7D631 /* TestLevelLayer.m */,
+				E09D2383176260E500151243 /* GameLevel.h */,
+				E09D2384176260E500151243 /* GameLevel.m */,
 			);
 			name = Levels;
 			sourceTree = "<group>";
@@ -1155,6 +1160,7 @@
 				E008DD25175F935600720CC5 /* MainMenuViewController.m in Sources */,
 				E04012D6175F99E400AF0081 /* GameManagerViewController.m in Sources */,
 				E04012D9175F9E8600AF0081 /* GameManager.m in Sources */,
+				E09D2385176260E500151243 /* GameLevel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,8 +12,7 @@
 
 @implementation TestLevelLayer
 
-@synthesize map, groundLayer, barriers;
-@synthesize previousTouchLocation, mapDragged;
+
 @synthesize player;
 
 
@@ -41,20 +40,20 @@
         
         /* Load map from TMX file and obtain the layers from the map */
         self.map = [CCTMXTiledMap tiledMapWithTMXFile:kTEST_LEVEL_MAP_NAME];
-        self.groundLayer = [map layerNamed:@"floor"];
-        self.barriers = [map layerNamed:@"edges"];
+        self.groundLayer = [self.map layerNamed:@"floor"];
+        //self.barriers = [map layerNamed:@"edges"];
         
         /* Center the screen on the map */
-        [IsometricCoordinateConverter centerTileMapOnTileCoord:CGPointMake(4,4) tileMap:map];
+        [IsometricCoordinateConverter centerTileMapOnTileCoord:CGPointMake(4,4) tileMap:self.map];
         
         /* Add the map to our view */
-        [self addChild:map];
+        [self addChild:self.map];
         
         /* PLAYER TEST */
                 
         player = [Player createPlayerAtTileCoordinate:ccp(4,4) withOwner:self];
                 
-        [map addChild:player];
+        [self.map addChild:player];
         
         /*---------------------------------*/
                 
@@ -84,9 +83,9 @@
 -(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
     /* Save the touch's location incase user drags map */
-    previousTouchLocation = [touch locationInView:touch.view];
+    self.previousTouchLocation = [touch locationInView:touch.view];
     
-    previousTouchLocation = [[CCDirector sharedDirector] convertToGL:previousTouchLocation];
+    self.previousTouchLocation = [[CCDirector sharedDirector] convertToGL:self.previousTouchLocation];
     
 	return YES;
 }
@@ -97,11 +96,11 @@
     CGPoint touchlocation = [self convertToMapCoordinate:[touch locationInView:touch.view]];
 
     /* Make sure that the user tapped inside the board and that scrolling is not happening */
-    if ([IsometricCoordinateConverter isPoint:touchlocation outOfBoundsOnMap:map] && !mapDragged)
+    if ([IsometricCoordinateConverter isPoint:touchlocation outOfBoundsOnMap:self.map] && !self.mapDragged)
     {
         /* DEBUG */
-        CGPoint tileCoord = [IsometricCoordinateConverter tilePosFromLocation:touchlocation tileMap:map];
-        CGPoint pixLoc = [IsometricCoordinateConverter pixelCoordForTile:tileCoord onLayer:groundLayer];
+        CGPoint tileCoord = [IsometricCoordinateConverter tilePosFromLocation:touchlocation tileMap:self.map];
+        CGPoint pixLoc = [IsometricCoordinateConverter pixelCoordForTile:tileCoord onLayer:self.groundLayer];
     
         CCLOG(@"Tile coord: < %d , %d >", (int)tileCoord.x, (int)tileCoord.y);
         CCLOG(@"Tile pix coord: < %.2f , %.2f >", pixLoc.x, pixLoc.y);
@@ -111,32 +110,32 @@
     }
     
     /* Reset flag for next touch session */
-    mapDragged = NO;
+    self.mapDragged = NO;
 }
 
 -(void) ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
 {
     /* Prevents player movement while scrolling is happening */
-    mapDragged = YES;
+    self.mapDragged = YES;
     
-    CGPoint desiredMapLocation = [map position];
+    CGPoint desiredMapLocation = [self.map position];
     
     /* Obtain the touch location in GL coordinates */
     CGPoint touchlocation = [[CCDirector sharedDirector] convertToGL:[touch locationInView:touch.view]];
     
     /* The distance dragged since last touch */
-    CGPoint delta = ccpSub(touchlocation, previousTouchLocation);
+    CGPoint delta = ccpSub(touchlocation, self.previousTouchLocation);
     
     /* desired map location after scrolling */
     desiredMapLocation = ccpAdd(desiredMapLocation, delta);
     
     /* Make sure the map stays within the screen's bounds */
-    if(![IsometricCoordinateConverter isMapWithinBounds:map atPosition:desiredMapLocation]) return;
+    if(![IsometricCoordinateConverter isMapWithinBounds:self.map atPosition:desiredMapLocation]) return;
     
     /* If the scrolling is valid update map's position */
-    [map setPosition:desiredMapLocation];
+    [self.map setPosition:desiredMapLocation];
     
-    previousTouchLocation = touchlocation;
+    self.previousTouchLocation = touchlocation;
 }
 
 -(CGPoint) convertToMapCoordinate:(CGPoint) coordintate
@@ -146,7 +145,7 @@
     coordintate = [self convertToNodeSpace:coordintate];
     
     /* Account for map scrolling */
-    coordintate = ccpSub(coordintate, map.position);
+    coordintate = ccpSub(coordintate, self.map.position);
     
     return coordintate;
 }
@@ -155,9 +154,6 @@
 
 -(void) dealloc
 {
-    [map release];
-    [groundLayer release];
-    [barriers release];
     [super dealloc];
 }
 
