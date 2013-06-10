@@ -3,8 +3,6 @@
 //  PFLS_Isometric
 //
 //  Created by Ruben Flores on 6/5/13.
-//
-//
 
 #import "GameManager.h"
 #import "GameManagerViewController.h"
@@ -44,12 +42,12 @@ static GameManager * _gameManager = nil;
 
 -(void) runLevelWithID:(unsigned) theID
 {
-    CCScene * scene;
+    CCScene * gameLevel;
     
     switch (theID)
     {
         case kTEST_LEVEL_ID:
-            scene = [TestLevelLayer scene];
+            gameLevel = [TestLevelLayer scene];
             break;
             
         default:
@@ -57,7 +55,7 @@ static GameManager * _gameManager = nil;
             break;
     }
     
-    if (scene) [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5f scene:scene withColor:ccWHITE]];
+    if (gameLevel) [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5f scene:gameLevel withColor:ccWHITE]];
 }
 
 #pragma mark Memory Management

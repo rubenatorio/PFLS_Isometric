@@ -21,7 +21,4 @@
 /* Returns a scene for the CCDirector to run */
 +(CCScene *) scene;
 
-/* Takes in a UI point and converts it to map coordinates with the scrolling of the map */
--(CGPoint) convertToMapCoordinate:(CGPoint) coordintate;
-
 @end

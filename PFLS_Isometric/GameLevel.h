@@ -3,11 +3,21 @@
 //  PFLS_Isometric
 //
 //  Created by Ruben Flores on 6/7/13.
-//  Copyright 2013 __MyCompanyName__. All rights reserved.
+//  Copyright 2013 Invariant Studios. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+
+/* Main Abstract class that all game levels should inherit from
+   The custom initializer in this class sets up all the inherited instance variables
+   NOTE: this class requires the mapName string to have the .TMX extension and the custom
+         initializer assumes that the ground layer inside the tmx map will be called "floor" 
+ 
+   This class also handles basic user input, allowing the register touches only if they are inside
+   the board, and allows the map to be dragged while staying inside the bounds of the screen.
+   The ccTouches began, moved and ended methods should be overriden if a different control scheme is desired
+ */
 
 @interface GameLevel : CCLayer
 
@@ -22,6 +32,10 @@
 /* stores the previous location where user touched to account for when scrolling the map */
 @property (nonatomic, assign) CGPoint previousTouchLocation;
 
+/* Initialize all instance properties with the given map file */
+-(id) initWithMapFile:(NSString *) mapFile;
+
+/* Takes in a UI point and converts it to map coordinates with the scrolling of the map */
 -(CGPoint) convertToMapCoordinate:(CGPoint) coordintate;
 
 @end

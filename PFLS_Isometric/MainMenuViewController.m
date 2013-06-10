@@ -3,8 +3,6 @@
 //  PFLS_Isometric
 //
 //  Created by Ruben Flores on 6/5/13.
-//
-//
 
 #import "MainMenuViewController.h"
 #import "GameManager.h"
