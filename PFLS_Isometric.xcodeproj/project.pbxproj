@@ -145,6 +145,9 @@
 		E0A7D018174E9F1900C7D631 /* level02.tmx in Resources */ = {isa = PBXBuildFile; fileRef = E0A7D017174E9F1900C7D631 /* level02.tmx */; };
 		E0A7D01C174EBB4900C7D631 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A7D01B174EBB4900C7D631 /* Player.m */; };
 		E0A7D01E174EBBA300C7D631 /* Invader2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A7D01D174EBBA300C7D631 /* Invader2.png */; };
+		E0C8D0351766E2BA00C69C35 /* TileSet.png in Resources */ = {isa = PBXBuildFile; fileRef = E0C8D0321766E2BA00C69C35 /* TileSet.png */; };
+		E0C8D0361766E2BA00C69C35 /* TileSet64.png in Resources */ = {isa = PBXBuildFile; fileRef = E0C8D0331766E2BA00C69C35 /* TileSet64.png */; };
+		E0C8D0371766E2BA00C69C35 /* TileSet128.png in Resources */ = {isa = PBXBuildFile; fileRef = E0C8D0341766E2BA00C69C35 /* TileSet128.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -430,6 +433,9 @@
 		E0A7D01A174EBB4900C7D631 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		E0A7D01B174EBB4900C7D631 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		E0A7D01D174EBBA300C7D631 /* Invader2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Invader2.png; sourceTree = "<group>"; };
+		E0C8D0321766E2BA00C69C35 /* TileSet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TileSet.png; sourceTree = "<group>"; };
+		E0C8D0331766E2BA00C69C35 /* TileSet64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TileSet64.png; sourceTree = "<group>"; };
+		E0C8D0341766E2BA00C69C35 /* TileSet128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TileSet128.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -533,6 +539,9 @@
 		E0A7CE7F174D521F00C7D631 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E0C8D0321766E2BA00C69C35 /* TileSet.png */,
+				E0C8D0331766E2BA00C69C35 /* TileSet64.png */,
+				E0C8D0341766E2BA00C69C35 /* TileSet128.png */,
 				E04012DE175FDE5400AF0081 /* FlyingLaserShark.jpg */,
 				E0A7D01D174EBBA300C7D631 /* Invader2.png */,
 				E0A7D013174D61B000C7D631 /* TMX Files */,
@@ -1041,6 +1050,9 @@
 				E008DD26175F935600720CC5 /* MainMenuViewController.xib in Resources */,
 				E04012DF175FDE5400AF0081 /* FlyingLaserShark.jpg in Resources */,
 				E04012E1175FE26800AF0081 /* Default-568h@2x.png in Resources */,
+				E0C8D0351766E2BA00C69C35 /* TileSet.png in Resources */,
+				E0C8D0361766E2BA00C69C35 /* TileSet64.png in Resources */,
+				E0C8D0371766E2BA00C69C35 /* TileSet128.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
