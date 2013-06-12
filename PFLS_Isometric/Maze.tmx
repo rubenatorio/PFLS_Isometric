@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="isometric" width="10" height="10" tilewidth="64" tileheight="32">
  <tileset firstgid="1" name="TileSet64" tilewidth="64" tileheight="32">
-  <image source="PFLS Assets/TileSets/TileSet64.png" width="512" height="384"/>
+  <image source="TileSet64.png" width="512" height="384"/>
  </tileset>
  <tileset firstgid="97" name="TileSetEdges64" tilewidth="64" tileheight="32">
-  <image source="PFLS Assets/TileSets/TileSetEdges64.png" width="512" height="384"/>
+  <image source="TileSetEdges64.png" width="512" height="384"/>
  </tileset>
  <layer name="Floor" width="10" height="10">
   <data encoding="base64" compression="zlib">
@@ -13,16 +13,21 @@
  </layer>
  <layer name="Barriers" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYCAPcGLBuNQRax4uPjH2kGo+pYDa5sEAAIKoAH8=
+   eJxjYCAPcGLBuNQRax4uPjH2UGI+NcyjFgAAiAAAiA==
   </data>
  </layer>
  <layer name="Tops" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYEAARiwYG8AlTkgdIxqbkD2kmk8poLZ55AAAElAADw==
+   eJxjYEAARiwYG8AlTkgdIxqbkD2UmE8N8wYCAAATFAAQ
   </data>
  </layer>
  <objectgroup name="StartingPosition" width="10" height="10">
-  <object name="Start" x="67" y="291" width="26" height="26"/>
+  <object name="Start" x="67" y="291" width="26" height="26">
+   <properties>
+    <property name="TileX" value="2"/>
+    <property name="TileY" value="9"/>
+   </properties>
+  </object>
   <object x="74" y="310"/>
   <object name="Finish" x="259" y="194" width="27" height="28"/>
   <object x="286" y="222"/>
