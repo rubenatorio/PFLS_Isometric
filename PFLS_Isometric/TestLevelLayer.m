@@ -35,16 +35,16 @@
         
         /* PLAYER TEST */
         
-//        CCTMXObjectGroup *positions = [self.map objectGroupNamed:@"StartingPosition"];
-//        NSAssert(positions, @"No initial position set");
-//        
-//        NSDictionary * startPoint = [positions objectNamed:@"Start"];
-//        
-//        CCLOG(@"Start Tile <%@,%@>",startPoint[@"TileX"], startPoint[@"TileY"]);
-//        
-//        CGPoint startTile = ccp([startPoint[@"TileX"] integerValue], [startPoint[@"TileY"] integerValue]);
+        CCTMXObjectGroup *positions = [self.map objectGroupNamed:@"StartingPosition"];
+        NSAssert(positions, @"No initial position set");
         
-        player = [Player createPlayerAtTileCoordinate:ccp(5,5) withOwner:self];
+        NSDictionary * startPoint = [positions objectNamed:@"Start"];
+        
+        CCLOG(@"Start Tile <%@,%@>",startPoint[@"TileX"], startPoint[@"TileY"]);
+        
+        CGPoint startTile = ccp([startPoint[@"TileX"] integerValue], [startPoint[@"TileY"] integerValue]);
+        
+        player = [Player createPlayerAtTileCoordinate:startTile withOwner:self];
                 
         [self.map addChild:player];
                 

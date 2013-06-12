@@ -36,7 +36,7 @@
         
         /* Center the screen on the map */
         
-        [IsometricCoordinateConverter centerTileMapOnTileCoord:ccp(0,9) tileMap:self.map];
+        [IsometricCoordinateConverter centerTileMapOnTileCoord:ccp(4,4) tileMap:self.map];
         
         /* Add the map to our view */
         [self addChild:self.map];
