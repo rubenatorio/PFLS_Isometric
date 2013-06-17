@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="isometric" width="20" height="20" tilewidth="64" tileheight="32">
+ <tileset firstgid="1" name="1" tilewidth="128" tileheight="128">
+  <image source="../../../../Downloads/isometricTileset_2.png" trans="ff00ff" width="860" height="762"/>
+ </tileset>
+ <tileset firstgid="31" name="Main" tilewidth="64" tileheight="32">
+  <image source="iso-64x64-outside.png" trans="ff00ff" width="640" height="1024"/>
+ </tileset>
+ <tileset firstgid="351" name="main2" tilewidth="64" tileheight="32">
+  <image source="iso-64x64-outside.png" width="640" height="1024"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJwTYmJgyGJkYBBkQmBFqBg5WIAJlc0LxNyDzDyYP5WpZB4vGh5M5vEA9XKhYU4KzBsueA4QrxwE7hjFo3goYwC4zpqT
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAfxDEhcAATQvwKIwPDY0YKDAaCKCYIBoELVDAPBAqYCKshBoQzUdc8EEjEYhYvmeaDzJrLhN1Mcs1LpKJ5bkwITAxYC4z7NVC8ioh0sIYREyPrWw1kr4TylxNh3kpGVIyubwWQvQyKl1LBPFIBLc2DAWqat5vIcCLGPBDexUjd8FtJhHlH8ciTYx4InMehhlzzzlHZPGwAAFALPFY=
+  </data>
+ </layer>
+ <layer name="Tile Layer 3" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJw7xcjAcBuIqQWOAc26SaF5AUwMDGlM1HEPDFDbvClUMi8caM5kJgidSAUzw5kQmBrAhgmBSQGLgGlgARHpAKQOHSPrWwhkz4fiuUSYN58REyPrmwdkz4Hi2VQwj1Qw1MzbSGQ4EWveBiLTBbHmDfbwI9a8IzjUUNt91AYARyM4zg==
+  </data>
+ </layer>
+ <layer name="Tile Layer 4" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAcxDBRwRAamtdFRfM6oWaFU8HMDir7cziDr4wD7YJRMFzBWmDaWkXF9LUCaNbSEZJeAZv3BlU=
+  </data>
+ </layer>
+ <layer name="Tile Layer 5" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBhcoIGJembVU9GsOiqaNdzBa8aBdsEoGM5gARXT1zygWbNH0yvZAABLuARM
+  </data>
+ </layer>
+ <layer name="Tile Layer 6" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAflDFRoBkNlFLRrBIqmjUKRsEoGAWjADsAAADiAWY=
+  </data>
+ </layer>
+</map>
