@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		506A09CC176FB82C00417E9B /* Seans Level.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 506A09CB176FB82C00417E9B /* Seans Level.tmx */; };
 		E008DD25175F935600720CC5 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E008DD23175F935600720CC5 /* MainMenuViewController.m */; };
 		E008DD26175F935600720CC5 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E008DD24175F935600720CC5 /* MainMenuViewController.xib */; };
 		E04012D6175F99E400AF0081 /* GameManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E04012D5175F99E400AF0081 /* GameManagerViewController.m */; };
@@ -154,6 +155,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		506A09CB176FB82C00417E9B /* Seans Level.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Seans Level.tmx"; sourceTree = "<group>"; };
 		E008DD22175F935600720CC5 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		E008DD23175F935600720CC5 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		E008DD24175F935600720CC5 /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
@@ -967,6 +969,7 @@
 		E0A7D013174D61B000C7D631 /* TMX Files */ = {
 			isa = PBXGroup;
 			children = (
+				506A09CB176FB82C00417E9B /* Seans Level.tmx */,
 				E06C719017690DD6003D5F60 /* Maze2.tmx */,
 				E05F5199176835B20040F231 /* Maze.tmx */,
 			);
@@ -1069,6 +1072,7 @@
 				E05F51A01768DC430040F231 /* TODO.txt in Resources */,
 				E06C719117690DD6003D5F60 /* Maze2.tmx in Resources */,
 				E0B37E53176F9950000EBA87 /* GameLevels.plist in Resources */,
+				506A09CC176FB82C00417E9B /* Seans Level.tmx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
