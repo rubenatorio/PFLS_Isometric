@@ -7,6 +7,7 @@
 
 #import "IsometricCoordinateConverter.h"
 #import "GameConstants.h"
+#import "GameTypes.h"
 
 @implementation IsometricCoordinateConverter
 

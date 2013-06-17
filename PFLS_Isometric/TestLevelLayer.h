@@ -26,4 +26,6 @@
 /* Returns a scene for the CCDirector to run */
 +(CCScene *) scene;
 
+-(TileDirection) tileDirectionFromTile:(CGPoint) tileCoor;
+
 @end

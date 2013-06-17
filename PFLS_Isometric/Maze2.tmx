@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="isometric" width="20" height="10" tilewidth="64" tileheight="32">
+ <tileset firstgid="1" name="TileSet64" tilewidth="64" tileheight="32">
+  <image source="TileSet64.png" width="512" height="384"/>
+ </tileset>
+ <tileset firstgid="97" name="TileSetEdges64" tilewidth="64" tileheight="32">
+  <image source="TileSetEdges64.png" width="512" height="384"/>
+ </tileset>
+ <layer name="Floor" width="20" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgF6GA5CXj7IMfU9u9IAwB0rirz
+  </data>
+ </layer>
+ <layer name="Barriers" width="20" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBh5oJYAHgWjAAYASMgD6Q==
+  </data>
+ </layer>
+ <layer name="Tops" width="20" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBjcoJQAHgWjgJYAAPRoA6k=
+  </data>
+ </layer>
+ <objectgroup name="StartingPosition" width="20" height="10">
+  <object name="Start" x="5" y="163" width="25" height="23">
+   <properties>
+    <property name="TileX" value="0"/>
+    <property name="TileY" value="5"/>
+   </properties>
+  </object>
+  <object x="32" y="190"/>
+ </objectgroup>
+</map>

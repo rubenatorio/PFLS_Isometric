@@ -26,6 +26,6 @@
 
 /* Game Level id's */
 
-#define kTEST_LEVEL_ID 1000
+#define kTEST_LEVEL_ID 1
 
 #endif

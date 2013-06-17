@@ -13,6 +13,7 @@
 @implementation GameManager
 
 @synthesize viewController = _viewController;
+@synthesize currentLevel;
 
 static GameManager * _gameManager = nil;
 
