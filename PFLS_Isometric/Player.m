@@ -3,8 +3,7 @@
 //  PFLS_Isometric
 //
 //  Created by Ruben Flores on 5/23/13.
-//  Copyright 2013 __MyCompanyName__. All rights reserved.
-//
+//  Copyright 2013 InvariantStudios. All rights reserved.
 
 #import "Player.h"
 #import "TestLevelLayer.h"
@@ -33,16 +32,21 @@
 }
 
 -(void) moveToTile:(CGPoint) tileCoordinate
-{    
-    [self stopAllActions];
+{
     TestLevelLayer * layer = (TestLevelLayer *) owner;
+    
+    CGSize size = [layer.groundLayer layerSize];
+    
+    if(tileCoordinate.x < 0 || tileCoordinate.y < 0 || tileCoordinate.x >= size.width || tileCoordinate.y >= size.height) return;
+    
+    [self stopAllActions];
 
     CGPoint currentTile = [IsometricCoordinateConverter tilePosFromLocation:self.position tileMap:layer.map];
     CGPoint tiles = ccpSub(tileCoordinate , currentTile);
     
     float duration = (fabsf(tiles.x) + fabsf(tiles.y)) * kTILE_MOVEMENT_SPEED;
-    
-    if(tiles.x == 0 || tiles.y == 0)
+        
+    if((tiles.x == 0 || tiles.y == 0) && [layer.groundLayer tileGIDAt:tileCoordinate] != 0)
     {
         CGPoint currentPos = [self position];
         CGPoint nextPos = [IsometricCoordinateConverter pixelCoordForTile:tileCoordinate onLayer:layer.groundLayer];
@@ -71,7 +75,7 @@
 //            CCLOG(@"Tile pix coord: < %.2f , %.2f >", pixLoc.x, pixLoc.y);
 //            CCLOG(@"Player Pos: <%.2f , %.2f>", self.position.x, self.position.y);
 //            CCLOG(@"Player Tile coord: < %d , %d >", (int)playerTile.x, (int)playerTile.y);
-//            CCLOG(@"TOUCHED ME NIGGA!");
+            CCLOG(@"Player Tapped!");
             return YES;
         }
     

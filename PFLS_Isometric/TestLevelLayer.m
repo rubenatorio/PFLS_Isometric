@@ -3,7 +3,7 @@
 //  PFLS_Isometric
 //
 //  Created by Ruben Flores on 5/22/13.
-//  Copyright 2013 __MyCompanyName__. All rights reserved.
+//  Copyright 2013 InvariantStudios. All rights reserved.
 //
 
 #import "TestLevelLayer.h"
@@ -12,8 +12,7 @@
 
 @implementation TestLevelLayer
 
-@synthesize map, groundLayer, barriers;
-@synthesize previousTouchLocation, mapDragged;
+
 @synthesize player;
 
 
@@ -30,36 +29,27 @@
 
 -(id) init
 {
-	if( (self=[super init]) )
+	if( (self = [super initWithMapFile:kTEST_LEVEL_MAP_NAME]) )
     {
-        
-        /* Make sure we can register user input */
-        self.isTouchEnabled = YES;
-        
-        /* Flag needed to normalize the map's position against scrolling */
-        self.mapDragged = NO;
-        
-        /* Load map from TMX file and obtain the layers from the map */
-        self.map = [CCTMXTiledMap tiledMapWithTMXFile:kTEST_LEVEL_MAP_NAME];
-        self.groundLayer = [map layerNamed:@"floor"];
-        self.barriers = [map layerNamed:@"edges"];
-        
-        /* Center the screen on the map */
-        [IsometricCoordinateConverter centerTileMapOnTileCoord:CGPointMake(4,4) tileMap:map];
-        
-        /* Add the map to our view */
-        [self addChild:map];
+        barrierLayer = [self.map layerNamed:kBARRIERS_LAYER];
         
         /* PLAYER TEST */
-                
-        player = [Player createPlayerAtTileCoordinate:ccp(4,4) withOwner:self];
-                
-        [map addChild:player];
         
-        /*---------------------------------*/
+        CCTMXObjectGroup *positions = [self.map objectGroupNamed:@"StartingPosition"];
+        NSAssert(positions, @"No initial position set");
+        
+        NSDictionary * startPoint = [positions objectNamed:@"Start"];
+        
+        CCLOG(@"Start Tile <%@,%@>",startPoint[@"TileX"], startPoint[@"TileY"]);
+        
+        CGPoint startTile = ccp([startPoint[@"TileX"] integerValue], [startPoint[@"TileY"] integerValue]);
+        
+        player = [Player createPlayerAtTileCoordinate:startTile withOwner:self];
+                
+        [self.map addChild:player];
                 
         /* Get updated everytime a frame is to be rendered */
-        //[self scheduleUpdate];
+        [self scheduleUpdate];
     }
     
     return self;
@@ -72,23 +62,17 @@
 
 #pragma mark CCTouchDispatcherDelegate Methods
 
-/* HANDLE USER INTERACTION */
-
--(void)registerWithTouchDispatcher
-{
-    [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self
-                                                              priority:kLEVEL_LAYER_PRIORITY
-                                                       swallowsTouches:YES];
-}
 
 -(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{    
+    /* Override for custom behavior */
+    return  [super ccTouchBegan:touch withEvent:event];
+}
+
+-(void) ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    /* Save the touch's location incase user drags map */
-    previousTouchLocation = [touch locationInView:touch.view];
-    
-    previousTouchLocation = [[CCDirector sharedDirector] convertToGL:previousTouchLocation];
-    
-	return YES;
+    /* Override for custom behavior */
+    [super ccTouchMoved:touch withEvent:event];
 }
 
 -(void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
@@ -97,67 +81,139 @@
     CGPoint touchlocation = [self convertToMapCoordinate:[touch locationInView:touch.view]];
 
     /* Make sure that the user tapped inside the board and that scrolling is not happening */
-    if ([IsometricCoordinateConverter isPoint:touchlocation outOfBoundsOnMap:map] && !mapDragged)
+    if ([IsometricCoordinateConverter isPoint:touchlocation outOfBoundsOnMap:self.map] && !self.mapDragged)
     {
         /* DEBUG */
-        CGPoint tileCoord = [IsometricCoordinateConverter tilePosFromLocation:touchlocation tileMap:map];
-        CGPoint pixLoc = [IsometricCoordinateConverter pixelCoordForTile:tileCoord onLayer:groundLayer];
+        CGPoint tileCoord = [IsometricCoordinateConverter tilePosFromLocation:touchlocation tileMap:self.map];
+        CGPoint pixLoc = [IsometricCoordinateConverter pixelCoordForTile:tileCoord onLayer:self.groundLayer];
     
         CCLOG(@"Tile coord: < %d , %d >", (int)tileCoord.x, (int)tileCoord.y);
         CCLOG(@"Tile pix coord: < %.2f , %.2f >", pixLoc.x, pixLoc.y);
-        /*----------------*/
+                
+        currentTouchDirection = [self tileDirectionFromTile:tileCoord];
         
-        [player moveToTile:tileCoord];
+        //[player moveToTile:tileCoord];
+        [self processTileMovement:tileCoord];
     }
     
     /* Reset flag for next touch session */
-    mapDragged = NO;
+    self.mapDragged = NO;
 }
 
--(void) ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
+-(TileDirection) tileDirectionFromTile:(CGPoint) tileCoor
 {
-    /* Prevents player movement while scrolling is happening */
-    mapDragged = YES;
+    CGPoint playerTile = [IsometricCoordinateConverter tilePosFromLocation:[player position] tileMap:self.map];
     
-    CGPoint desiredMapLocation = [map position];
+    CGPoint delta = ccpSub(tileCoor, playerTile);
     
-    /* Obtain the touch location in GL coordinates */
-    CGPoint touchlocation = [[CCDirector sharedDirector] convertToGL:[touch locationInView:touch.view]];
+    if(delta.x == 0) return (delta.y > 0) ? southWest : northEast;
     
-    /* The distance dragged since last touch */
-    CGPoint delta = ccpSub(touchlocation, previousTouchLocation);
+    else if (delta.y == 0) return (delta.x > 0) ? southEast : northWest;
     
-    /* desired map location after scrolling */
-    desiredMapLocation = ccpAdd(desiredMapLocation, delta);
-    
-    /* Make sure the map stays within the screen's bounds */
-    if(![IsometricCoordinateConverter isMapWithinBounds:map atPosition:desiredMapLocation]) return;
-    
-    /* If the scrolling is valid update map's position */
-    [map setPosition:desiredMapLocation];
-    
-    previousTouchLocation = touchlocation;
+    return noDirection;
 }
 
--(CGPoint) convertToMapCoordinate:(CGPoint) coordintate
+-(void) processTileMovement:(CGPoint) tileDestinaton
 {
-    coordintate = [[CCDirector sharedDirector] convertToGL:coordintate];
+    NSAssert(barrierLayer, @"No barriers specified");
     
-    coordintate = [self convertToNodeSpace:coordintate];
+    CGPoint startingPosition = [IsometricCoordinateConverter tilePosFromLocation:[player position] tileMap:self.map];
+    CGPoint currentPosition;
     
-    /* Account for map scrolling */
-    coordintate = ccpSub(coordintate, map.position);
-    
-    return coordintate;
+    switch (currentTouchDirection) {
+        case northWest:
+        {
+            CCLOG(@"NW");
+            currentPosition = startingPosition;
+            for(int i = startingPosition.x - 1; i >= tileDestinaton.x; --i)
+            {
+                CGPoint nextTile = ccp(i, startingPosition.y);
+                
+                int groundGID = [self.groundLayer tileGIDAt:nextTile];
+                int barrierGID = [barrierLayer tileGIDAt:nextTile];
+                if(groundGID == 0 || barrierGID != 0) //cannot move there
+                {
+                    //can only move to the current position
+                    [player moveToTile:currentPosition];
+                    return;
+                }
+                currentPosition = nextTile;
+            }
+            [player moveToTile:currentPosition];
+            break;
+        }
+        case northEast:
+        {
+            CCLOG(@"NE");
+            currentPosition = startingPosition;
+            for(int i = startingPosition.y - 1; i >= tileDestinaton.y; --i)
+            {
+                CGPoint nextTile = ccp(startingPosition.x, i);
+                
+                int groundGID = [self.groundLayer tileGIDAt:nextTile];
+                int barrierGID = [barrierLayer tileGIDAt:nextTile];
+                if(groundGID == 0 || barrierGID != 0) //cannot move there
+                {
+                    //can only move to the current position
+                    [player moveToTile:currentPosition];
+                    return;
+                }
+                currentPosition = nextTile;
+            }
+            [player moveToTile:currentPosition];
+            break;
+        }
+        case southWest:
+        {
+            CCLOG(@"SW");
+            currentPosition = startingPosition;
+            for(int i = startingPosition.y + 1; i <= tileDestinaton.y; ++i)
+            {
+                CGPoint nextTile = ccp(startingPosition.x, i);
+                
+                int groundGID = [self.groundLayer tileGIDAt:nextTile];
+                int barrierGID = [barrierLayer tileGIDAt:nextTile];
+                if(groundGID == 0 || barrierGID != 0) //cannot move there
+                {
+                    //can only move to the current position
+                    [player moveToTile:currentPosition];
+                    return;
+                }
+                currentPosition = nextTile;
+            }
+            [player moveToTile:currentPosition];
+            break;
+        }
+        case southEast:
+        {
+            CCLOG(@"SE");
+            currentPosition = startingPosition;
+            for(int i = startingPosition.x + 1; i <= tileDestinaton.x; ++i)
+            {
+                CGPoint nextTile = ccp(i, startingPosition.y);
+                
+                int groundGID = [self.groundLayer tileGIDAt:nextTile];
+                int barrierGID = [barrierLayer tileGIDAt:nextTile];
+                if(groundGID == 0 || barrierGID != 0) //cannot move there
+                {
+                    //can only move to the current position
+                    [player moveToTile:currentPosition];
+                    return;
+                }
+                currentPosition = nextTile;
+            }
+            [player moveToTile:currentPosition];
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 #pragma mark Memory Management
 
 -(void) dealloc
 {
-    [map release];
-    [groundLayer release];
-    [barriers release];
     [super dealloc];
 }
 

@@ -3,10 +3,9 @@
 //  PFLS_Isometric
 //
 //  Created by Ruben Flores on 6/5/13.
-//
-//
 
 #import <Foundation/Foundation.h>
+#import "GameLevel.h"
 
 @class  GameManagerViewController;
 
@@ -16,6 +15,7 @@
 }
 
 @property (readonly,retain) GameManagerViewController * viewController;
+@property (readonly, assign) GameLevel * currentLevel;
 
 +(GameManager *)sharedManager;
 

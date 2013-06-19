@@ -3,11 +3,10 @@
 //  PFLS_Isometric
 //
 //  Created by Ruben Flores on 6/5/13.
-//
-//
 
 #import "GameManagerViewController.h"
 #import "IntroLayer.h"
+#import "GameManager.h"
 
 @implementation GameManagerViewController
 
@@ -31,7 +30,7 @@
     
     NSLog(@"Adding the GL View to the main view...");
     
-    [[CCDirector sharedDirector] runWithScene:[IntroLayer scene]];
+    [[GameManager sharedManager] startGame];
     
     [self.view insertSubview:_glView atIndex:0];
 }

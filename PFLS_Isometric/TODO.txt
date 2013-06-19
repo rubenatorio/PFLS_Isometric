@@ -1,0 +1,9 @@
+
+
+1) Create property for Player.h that holds the current tile position, this will save time from calling IsometricConverter::tilePosFromLocation 
+    lots of times in the level
+    
+2) move TestLevelLayer::directionFromLocation to the IcometricConverter class
+
+3) remove player's owner dependecy (e.g. move current map and layer properties to the game manager)
+

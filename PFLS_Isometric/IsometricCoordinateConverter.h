@@ -3,8 +3,6 @@
 //  PFLS_Isometric
 //
 //  Created by Ruben Flores on 5/22/13.
-//
-//
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
