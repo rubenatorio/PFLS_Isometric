@@ -143,9 +143,7 @@
 		E0A7CFFE174D522100C7D631 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A7CFFD174D522100C7D631 /* IntroLayer.m */; };
 		E0A7D007174D532700C7D631 /* TestLevelLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A7D006174D532700C7D631 /* TestLevelLayer.m */; };
 		E0A7D00A174D5C5100C7D631 /* IsometricCoordinateConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A7D009174D5C5100C7D631 /* IsometricCoordinateConverter.m */; };
-		E0A7D011174D61AC00C7D631 /* map01.tmx in Resources */ = {isa = PBXBuildFile; fileRef = E0A7D00F174D61AC00C7D631 /* map01.tmx */; };
 		E0A7D012174D61AC00C7D631 /* iso-64x64-outside.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A7D010174D61AC00C7D631 /* iso-64x64-outside.png */; };
-		E0A7D018174E9F1900C7D631 /* level02.tmx in Resources */ = {isa = PBXBuildFile; fileRef = E0A7D017174E9F1900C7D631 /* level02.tmx */; };
 		E0A7D01C174EBB4900C7D631 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A7D01B174EBB4900C7D631 /* Player.m */; };
 		E0A7D01E174EBBA300C7D631 /* Invader2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A7D01D174EBBA300C7D631 /* Invader2.png */; };
 		E0C8D0351766E2BA00C69C35 /* TileSet.png in Resources */ = {isa = PBXBuildFile; fileRef = E0C8D0321766E2BA00C69C35 /* TileSet.png */; };
@@ -434,9 +432,7 @@
 		E0A7D006174D532700C7D631 /* TestLevelLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestLevelLayer.m; sourceTree = "<group>"; };
 		E0A7D008174D5C5100C7D631 /* IsometricCoordinateConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsometricCoordinateConverter.h; sourceTree = "<group>"; };
 		E0A7D009174D5C5100C7D631 /* IsometricCoordinateConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsometricCoordinateConverter.m; sourceTree = "<group>"; };
-		E0A7D00F174D61AC00C7D631 /* map01.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map01.tmx; sourceTree = "<group>"; };
 		E0A7D010174D61AC00C7D631 /* iso-64x64-outside.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iso-64x64-outside.png"; sourceTree = "<group>"; };
-		E0A7D017174E9F1900C7D631 /* level02.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = level02.tmx; sourceTree = "<group>"; };
 		E0A7D01A174EBB4900C7D631 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		E0A7D01B174EBB4900C7D631 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		E0A7D01D174EBBA300C7D631 /* Invader2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Invader2.png; sourceTree = "<group>"; };
@@ -969,8 +965,6 @@
 			isa = PBXGroup;
 			children = (
 				D01B8F42177232F500144332 /* thomasmap.tmx */,
-				E0A7D017174E9F1900C7D631 /* level02.tmx */,
-				E0A7D00F174D61AC00C7D631 /* map01.tmx */,
 			);
 			name = "TMX Files";
 			sourceTree = "<group>";
@@ -1054,9 +1048,7 @@
 				E0A7CE95174D522000C7D631 /* Icon@2x.png in Resources */,
 				E0A7CE98174D522000C7D631 /* iTunesArtwork in Resources */,
 				E0A7CFD6174D522100C7D631 /* ChangeLog in Resources */,
-				E0A7D011174D61AC00C7D631 /* map01.tmx in Resources */,
 				E0A7D012174D61AC00C7D631 /* iso-64x64-outside.png in Resources */,
-				E0A7D018174E9F1900C7D631 /* level02.tmx in Resources */,
 				E0A7D01E174EBBA300C7D631 /* Invader2.png in Resources */,
 				E008DD26175F935600720CC5 /* MainMenuViewController.xib in Resources */,
 				E04012DF175FDE5400AF0081 /* FlyingLaserShark.jpg in Resources */,
