@@ -6,6 +6,8 @@
 
 
 #import "IsometricCoordinateConverter.h"
+#import "GameConstants.h"
+#import "GameTypes.h"
 
 @implementation IsometricCoordinateConverter
 
@@ -50,7 +52,7 @@
                                        screenSize.height * 0.5f);
     
     // get the ground layer
-    CCTMXLayer* layer = [tileMap layerNamed:@"floor"];
+    CCTMXLayer* layer = [tileMap layerNamed:kGROUND_LAYER];
     NSAssert(layer != nil, @"Ground layer not found!");
     
     // internally tile Y coordinates are off by 1
@@ -80,7 +82,7 @@
                                        screenSize.height * 0.5f);
     
     // get the ground layer
-    CCTMXLayer* layer = [tileMap layerNamed:@"floor"];
+    CCTMXLayer* layer = [tileMap layerNamed:kGROUND_LAYER];
     NSAssert(layer != nil, @"Ground layer not found!");
     
     // internally tile Y coordinates are off by 1

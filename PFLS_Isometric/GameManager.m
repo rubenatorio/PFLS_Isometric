@@ -8,10 +8,12 @@
 #import "GameManagerViewController.h"
 #import "GameConstants.h"
 #import "TestLevelLayer.h"
+#import "IntroLayer.h"
 
 @implementation GameManager
 
 @synthesize viewController = _viewController;
+@synthesize currentLevel;
 
 static GameManager * _gameManager = nil;
 
@@ -37,7 +39,7 @@ static GameManager * _gameManager = nil;
 
 -(void) startGame
 {
-    [self runLevelWithID:kTEST_LEVEL_ID];
+    [[CCDirector sharedDirector] runWithScene:[IntroLayer scene]];
 }
 
 -(void) runLevelWithID:(unsigned) theID

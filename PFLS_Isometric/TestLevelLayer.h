@@ -11,14 +11,21 @@
 #import "GameLevel.h"
 #import "IsometricCoordinateConverter.h"
 #import "GameConstants.h"
+#import "GameTypes.h"
 #import "Player.h"
 
 @interface TestLevelLayer : GameLevel
+{
+    TileDirection currentTouchDirection;
+    CCTMXLayer * barrierLayer;
+}
 
 /* Used to test collisions */
 @property (nonatomic, assign) Player * player;
 
 /* Returns a scene for the CCDirector to run */
 +(CCScene *) scene;
+
+-(TileDirection) tileDirectionFromTile:(CGPoint) tileCoor;
 
 @end

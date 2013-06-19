@@ -31,9 +31,20 @@
 {
 	if( (self = [super initWithMapFile:kTEST_LEVEL_MAP_NAME]) )
     {
+        barrierLayer = [self.map layerNamed:kBARRIERS_LAYER];
+        
         /* PLAYER TEST */
-                
-        player = [Player createPlayerAtTileCoordinate:ccp(4,4) withOwner:self];
+        
+        CCTMXObjectGroup *positions = [self.map objectGroupNamed:@"StartingPosition"];
+        NSAssert(positions, @"No initial position set");
+        
+        NSDictionary * startPoint = [positions objectNamed:@"Start"];
+        
+        CCLOG(@"Start Tile <%@,%@>",startPoint[@"TileX"], startPoint[@"TileY"]);
+        
+        CGPoint startTile = ccp([startPoint[@"TileX"] integerValue], [startPoint[@"TileY"] integerValue]);
+        
+        player = [Player createPlayerAtTileCoordinate:startTile withOwner:self];
                 
         [self.map addChild:player];
                 
@@ -53,9 +64,9 @@
 
 
 -(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
-{
+{    
     /* Override for custom behavior */
-    return [super ccTouchBegan:touch withEvent:event];
+    return  [super ccTouchBegan:touch withEvent:event];
 }
 
 -(void) ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
@@ -78,12 +89,125 @@
     
         CCLOG(@"Tile coord: < %d , %d >", (int)tileCoord.x, (int)tileCoord.y);
         CCLOG(@"Tile pix coord: < %.2f , %.2f >", pixLoc.x, pixLoc.y);
+                
+        currentTouchDirection = [self tileDirectionFromTile:tileCoord];
         
-        [player moveToTile:tileCoord];
+        //[player moveToTile:tileCoord];
+        [self processTileMovement:tileCoord];
     }
     
     /* Reset flag for next touch session */
     self.mapDragged = NO;
+}
+
+-(TileDirection) tileDirectionFromTile:(CGPoint) tileCoor
+{
+    CGPoint playerTile = [IsometricCoordinateConverter tilePosFromLocation:[player position] tileMap:self.map];
+    
+    CGPoint delta = ccpSub(tileCoor, playerTile);
+    
+    if(delta.x == 0) return (delta.y > 0) ? southWest : northEast;
+    
+    else if (delta.y == 0) return (delta.x > 0) ? southEast : northWest;
+    
+    return noDirection;
+}
+
+-(void) processTileMovement:(CGPoint) tileDestinaton
+{
+    NSAssert(barrierLayer, @"No barriers specified");
+    
+    CGPoint startingPosition = [IsometricCoordinateConverter tilePosFromLocation:[player position] tileMap:self.map];
+    CGPoint currentPosition;
+    
+    switch (currentTouchDirection) {
+        case northWest:
+        {
+            CCLOG(@"NW");
+            currentPosition = startingPosition;
+            for(int i = startingPosition.x - 1; i >= tileDestinaton.x; --i)
+            {
+                CGPoint nextTile = ccp(i, startingPosition.y);
+                
+                int groundGID = [self.groundLayer tileGIDAt:nextTile];
+                int barrierGID = [barrierLayer tileGIDAt:nextTile];
+                if(groundGID == 0 || barrierGID != 0) //cannot move there
+                {
+                    //can only move to the current position
+                    [player moveToTile:currentPosition];
+                    return;
+                }
+                currentPosition = nextTile;
+            }
+            [player moveToTile:currentPosition];
+            break;
+        }
+        case northEast:
+        {
+            CCLOG(@"NE");
+            currentPosition = startingPosition;
+            for(int i = startingPosition.y - 1; i >= tileDestinaton.y; --i)
+            {
+                CGPoint nextTile = ccp(startingPosition.x, i);
+                
+                int groundGID = [self.groundLayer tileGIDAt:nextTile];
+                int barrierGID = [barrierLayer tileGIDAt:nextTile];
+                if(groundGID == 0 || barrierGID != 0) //cannot move there
+                {
+                    //can only move to the current position
+                    [player moveToTile:currentPosition];
+                    return;
+                }
+                currentPosition = nextTile;
+            }
+            [player moveToTile:currentPosition];
+            break;
+        }
+        case southWest:
+        {
+            CCLOG(@"SW");
+            currentPosition = startingPosition;
+            for(int i = startingPosition.y + 1; i <= tileDestinaton.y; ++i)
+            {
+                CGPoint nextTile = ccp(startingPosition.x, i);
+                
+                int groundGID = [self.groundLayer tileGIDAt:nextTile];
+                int barrierGID = [barrierLayer tileGIDAt:nextTile];
+                if(groundGID == 0 || barrierGID != 0) //cannot move there
+                {
+                    //can only move to the current position
+                    [player moveToTile:currentPosition];
+                    return;
+                }
+                currentPosition = nextTile;
+            }
+            [player moveToTile:currentPosition];
+            break;
+        }
+        case southEast:
+        {
+            CCLOG(@"SE");
+            currentPosition = startingPosition;
+            for(int i = startingPosition.x + 1; i <= tileDestinaton.x; ++i)
+            {
+                CGPoint nextTile = ccp(i, startingPosition.y);
+                
+                int groundGID = [self.groundLayer tileGIDAt:nextTile];
+                int barrierGID = [barrierLayer tileGIDAt:nextTile];
+                if(groundGID == 0 || barrierGID != 0) //cannot move there
+                {
+                    //can only move to the current position
+                    [player moveToTile:currentPosition];
+                    return;
+                }
+                currentPosition = nextTile;
+            }
+            [player moveToTile:currentPosition];
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 #pragma mark Memory Management

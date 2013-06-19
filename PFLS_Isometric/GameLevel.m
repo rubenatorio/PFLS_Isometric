@@ -29,13 +29,14 @@
         
         /* Load map from TMX file and obtain the layers from the map */
         map = [CCTMXTiledMap tiledMapWithTMXFile:mapName];
-        groundLayer = [map layerNamed:@"floor"];
+        groundLayer = [map layerNamed:kGROUND_LAYER];
         
         /* Make sure we can register user input */
         self.isTouchEnabled = YES;
         
         /* Center the screen on the map */
-        [IsometricCoordinateConverter centerTileMapOnTileCoord:CGPointMake(4,4) tileMap:self.map];
+        
+        [IsometricCoordinateConverter centerTileMapOnTileCoord:ccp(4,4) tileMap:self.map];
         
         /* Add the map to our view */
         [self addChild:self.map];
