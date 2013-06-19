@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D01B8F43177232F500144332 /* thomasmap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = D01B8F42177232F500144332 /* thomasmap.tmx */; };
+		D061EFB1176FD23500DED63D /* LevelMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D061EFB0176FD23500DED63D /* LevelMenuViewController.xib */; };
+		D061EFB4176FD27A00DED63D /* LevelMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D061EFB3176FD27A00DED63D /* LevelMenuViewController.m */; };
 		E008DD25175F935600720CC5 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E008DD23175F935600720CC5 /* MainMenuViewController.m */; };
 		E008DD26175F935600720CC5 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E008DD24175F935600720CC5 /* MainMenuViewController.xib */; };
 		E04012D6175F99E400AF0081 /* GameManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E04012D5175F99E400AF0081 /* GameManagerViewController.m */; };
@@ -151,6 +154,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D01B8F42177232F500144332 /* thomasmap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = thomasmap.tmx; sourceTree = "<group>"; };
+		D061EFB0176FD23500DED63D /* LevelMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LevelMenuViewController.xib; sourceTree = "<group>"; };
+		D061EFB2176FD27900DED63D /* LevelMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelMenuViewController.h; sourceTree = "<group>"; };
+		D061EFB3176FD27A00DED63D /* LevelMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelMenuViewController.m; sourceTree = "<group>"; };
 		E008DD22175F935600720CC5 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		E008DD23175F935600720CC5 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		E008DD24175F935600720CC5 /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
@@ -462,6 +469,8 @@
 			isa = PBXGroup;
 			children = (
 				E008DD22175F935600720CC5 /* MainMenuViewController.h */,
+				D061EFB2176FD27900DED63D /* LevelMenuViewController.h */,
+				D061EFB3176FD27A00DED63D /* LevelMenuViewController.m */,
 				E008DD23175F935600720CC5 /* MainMenuViewController.m */,
 				E04012D4175F99E400AF0081 /* GameManagerViewController.h */,
 				E04012D5175F99E400AF0081 /* GameManagerViewController.m */,
@@ -473,6 +482,7 @@
 		E008DD27175F937000720CC5 /* NIB Files */ = {
 			isa = PBXGroup;
 			children = (
+				D061EFB0176FD23500DED63D /* LevelMenuViewController.xib */,
 				E008DD24175F935600720CC5 /* MainMenuViewController.xib */,
 			);
 			name = "NIB Files";
@@ -958,6 +968,7 @@
 		E0A7D013174D61B000C7D631 /* TMX Files */ = {
 			isa = PBXGroup;
 			children = (
+				D01B8F42177232F500144332 /* thomasmap.tmx */,
 				E0A7D017174E9F1900C7D631 /* level02.tmx */,
 				E0A7D00F174D61AC00C7D631 /* map01.tmx */,
 			);
@@ -1053,6 +1064,8 @@
 				E0C8D0351766E2BA00C69C35 /* TileSet.png in Resources */,
 				E0C8D0361766E2BA00C69C35 /* TileSet64.png in Resources */,
 				E0C8D0371766E2BA00C69C35 /* TileSet128.png in Resources */,
+				D061EFB1176FD23500DED63D /* LevelMenuViewController.xib in Resources */,
+				D01B8F43177232F500144332 /* thomasmap.tmx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1173,6 +1186,7 @@
 				E04012D6175F99E400AF0081 /* GameManagerViewController.m in Sources */,
 				E04012D9175F9E8600AF0081 /* GameManager.m in Sources */,
 				E09D2385176260E500151243 /* GameLevel.m in Sources */,
+				D061EFB4176FD27A00DED63D /* LevelMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

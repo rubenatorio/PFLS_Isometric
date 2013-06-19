@@ -14,7 +14,7 @@
 
 
 /* Game TMX file names  should be kLEVELNAME_MAP_NAME*/
-#define kTEST_LEVEL_MAP_NAME @"map01.tmx"
+#define kTEST_LEVEL_MAP_NAME @"thomasmap.tmx"
 
 /* Game Touch dispatcher priorities */
 #define kPLAYER_PRIORITY 0
