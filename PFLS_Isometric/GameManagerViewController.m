@@ -30,7 +30,7 @@
     
     NSLog(@"Adding the GL View to the main view...");
     
-    [[GameManager sharedManager] startGame];
+    //[[GameManager sharedManager] startGame];
     
     [self.view insertSubview:_glView atIndex:0];
 }

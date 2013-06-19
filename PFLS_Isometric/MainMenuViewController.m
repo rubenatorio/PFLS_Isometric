@@ -32,17 +32,18 @@
 
 - (IBAction)PlayGame:(id)sender
 {
-    UIViewController * viewController = [[GameManager sharedManager] startCocos2d];
+    UIViewController * viewController = [[GameManager sharedManager] setUpGame];
     
     [self.navigationController pushViewController:viewController animated:YES];
-    
-    //[[GameManager sharedManager] startGame];
-    
 }
-- (void)dealloc {
+
+- (void)dealloc
+{
     [super dealloc];
 }
-- (void)viewDidUnload {
+
+- (void)viewDidUnload
+{
     [super viewDidUnload];
 }
 @end

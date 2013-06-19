@@ -9,7 +9,11 @@
 
 @interface IntroLayer : CCLayer
 
-// returns a CCScene that contains the HelloWorldLayer as the only child
+@property (nonatomic, assign) CCScene * transitionScene;
+
 +(CCScene *) scene;
++(CCScene *) sceneWithTransition:(CCScene *) theScene;
+
+-(void) doTransition:(CCScene *)scene;
 
 @end

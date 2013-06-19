@@ -17,7 +17,7 @@
 
 static GameManager * _gameManager = nil;
 
-+(GameManager *)sharedManager
++(GameManager *) sharedManager
 {
     if (!_gameManager) _gameManager = [[self alloc] init];
     
@@ -39,25 +39,48 @@ static GameManager * _gameManager = nil;
 
 -(void) startGame
 {
-    [[CCDirector sharedDirector] runWithScene:[IntroLayer scene]];
+    _currentLevelIndex = 0;
+    
+    [self runLevel];
 }
 
--(void) runLevelWithID:(unsigned) theID
+-(void) loadLevels
 {
-    CCScene * gameLevel;
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"GameLevels" ofType:@"plist"];
     
-    switch (theID)
-    {
-        case kTEST_LEVEL_ID:
-            gameLevel = [TestLevelLayer scene];
-            break;
-            
-        default:
-            NSAssert(NO, @"Invalid level id");
-            break;
-    }
+    _gameLevels = [NSArray arrayWithContentsOfFile:path];
     
-    if (gameLevel) [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5f scene:gameLevel withColor:ccWHITE]];
+    NSLog(@"%@", _gameLevels);
+}
+
+-(void) runLevel
+{
+    NSAssert(_currentLevelIndex < [_gameLevels count], @"level index out of bouds");
+    
+    NSDictionary * levelConfig = [_gameLevels objectAtIndex:_currentLevelIndex];
+    
+    NSString * mapName = [levelConfig objectForKey:@"MapName"];
+    
+    NSAssert(mapName != nil, @"Done goofed the plist key");
+    
+    _currentLevel = [[[TestLevelLayer alloc] initWithMapFile:mapName] autorelease];
+    
+    CCScene * levelScene = [CCScene node];
+    
+    [levelScene addChild:_currentLevel];
+    
+    [[CCDirector sharedDirector] runWithScene:levelScene]; //display the load screen
+}
+
+-(UIViewController *) setUpGame
+{
+   [self loadLevels];
+    
+   UIViewController * gameView =  [self startCocos2d];
+    
+   [self startGame];
+    
+   return gameView;
 }
 
 #pragma mark Memory Management

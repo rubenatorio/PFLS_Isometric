@@ -7,3 +7,5 @@
 
 3) remove player's owner dependecy (e.g. move current map and layer properties to the game manager)
 
+4) invidible tiles should not be considered when touching the screen
+

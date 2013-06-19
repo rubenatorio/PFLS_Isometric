@@ -15,12 +15,11 @@
 
 @synthesize player;
 
-
-+(CCScene *) scene
++(CCScene *) sceneWithMapFile:(NSString *) mapName
 {
-	CCScene *scene = [CCScene node];
+    CCScene *scene = [CCScene node];
 	
-	TestLevelLayer *layer = [TestLevelLayer node];
+	TestLevelLayer *layer = [[[TestLevelLayer alloc] initWithMapFile:mapName] autorelease];
 	
 	[scene addChild: layer];
 	
@@ -48,6 +47,34 @@
                 
         [self.map addChild:player];
                 
+        /* Get updated everytime a frame is to be rendered */
+        [self scheduleUpdate];
+    }
+    
+    return self;
+}
+
+-(id) initWithMapFile:(NSString *)mapFile
+{
+    if( (self = [super initWithMapFile:mapFile]) )
+    {
+        barrierLayer = [self.map layerNamed:kBARRIERS_LAYER];
+        
+        /* PLAYER TEST */
+        
+        CCTMXObjectGroup *positions = [self.map objectGroupNamed:@"StartingPosition"];
+        NSAssert(positions, @"No initial position set");
+        
+        NSDictionary * startPoint = [positions objectNamed:@"Start"];
+        
+        CCLOG(@"Start Tile <%@,%@>",startPoint[@"TileX"], startPoint[@"TileY"]);
+        
+        CGPoint startTile = ccp([startPoint[@"TileX"] integerValue], [startPoint[@"TileY"] integerValue]);
+        
+        player = [Player createPlayerAtTileCoordinate:startTile withOwner:self];
+        
+        [self.map addChild:player];
+        
         /* Get updated everytime a frame is to be rendered */
         [self scheduleUpdate];
     }

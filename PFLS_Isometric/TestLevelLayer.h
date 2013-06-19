@@ -23,9 +23,10 @@
 /* Used to test collisions */
 @property (nonatomic, assign) Player * player;
 
-/* Returns a scene for the CCDirector to run */
-+(CCScene *) scene;
++(CCScene *) sceneWithMapFile:(NSString *) mapName;
 
 -(TileDirection) tileDirectionFromTile:(CGPoint) tileCoor;
+
+-(id) initWithMapFile:(NSString *)mapFile;
 
 @end

@@ -147,7 +147,7 @@
 		E0A7D012174D61AC00C7D631 /* iso-64x64-outside.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A7D010174D61AC00C7D631 /* iso-64x64-outside.png */; };
 		E0A7D01C174EBB4900C7D631 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A7D01B174EBB4900C7D631 /* Player.m */; };
 		E0A7D01E174EBBA300C7D631 /* Invader2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A7D01D174EBBA300C7D631 /* Invader2.png */; };
-		E0B37E53176F9950000EBA87 /* GameLevels.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0B37E52176F9950000EBA87 /* GameLevels.plist */; };
+		E0B37E55176FC0F2000EBA87 /* GameLevels.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0B37E54176FC0F2000EBA87 /* GameLevels.plist */; };
 		E0C8D0351766E2BA00C69C35 /* TileSet.png in Resources */ = {isa = PBXBuildFile; fileRef = E0C8D0321766E2BA00C69C35 /* TileSet.png */; };
 		E0C8D0361766E2BA00C69C35 /* TileSet64.png in Resources */ = {isa = PBXBuildFile; fileRef = E0C8D0331766E2BA00C69C35 /* TileSet64.png */; };
 		E0C8D0371766E2BA00C69C35 /* TileSet128.png in Resources */ = {isa = PBXBuildFile; fileRef = E0C8D0341766E2BA00C69C35 /* TileSet128.png */; };
@@ -440,7 +440,7 @@
 		E0A7D01A174EBB4900C7D631 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		E0A7D01B174EBB4900C7D631 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		E0A7D01D174EBBA300C7D631 /* Invader2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Invader2.png; sourceTree = "<group>"; };
-		E0B37E52176F9950000EBA87 /* GameLevels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = GameLevels.plist; path = ../GameLevels.plist; sourceTree = "<group>"; };
+		E0B37E54176FC0F2000EBA87 /* GameLevels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GameLevels.plist; sourceTree = "<group>"; };
 		E0C8D0321766E2BA00C69C35 /* TileSet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TileSet.png; sourceTree = "<group>"; };
 		E0C8D0331766E2BA00C69C35 /* TileSet64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TileSet64.png; sourceTree = "<group>"; };
 		E0C8D0341766E2BA00C69C35 /* TileSet128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TileSet128.png; sourceTree = "<group>"; };
@@ -532,6 +532,7 @@
 		E0A7CE7E174D521F00C7D631 /* PFLS_Isometric */ = {
 			isa = PBXGroup;
 			children = (
+				E0B37E54176FC0F2000EBA87 /* GameLevels.plist */,
 				E008DD21175F932700720CC5 /* View Controllers */,
 				E0A7D00C174D60D700C7D631 /* App Delegate */,
 				E0A7D019174EBB2A00C7D631 /* Game Objects */,
@@ -543,7 +544,6 @@
 				E0A7CE99174D522000C7D631 /* libs */,
 				E0A7CFF2174D522100C7D631 /* Supporting Files */,
 				E05F519F1768DC420040F231 /* TODO.txt */,
-				E0B37E52176F9950000EBA87 /* GameLevels.plist */,
 			);
 			path = PFLS_Isometric;
 			sourceTree = "<group>";
@@ -1068,7 +1068,7 @@
 				E05F519D1768C92E0040F231 /* Default-568h@2x.png in Resources */,
 				E05F51A01768DC430040F231 /* TODO.txt in Resources */,
 				E06C719117690DD6003D5F60 /* Maze2.tmx in Resources */,
-				E0B37E53176F9950000EBA87 /* GameLevels.plist in Resources */,
+				E0B37E55176FC0F2000EBA87 /* GameLevels.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

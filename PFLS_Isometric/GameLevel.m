@@ -56,6 +56,7 @@
     return coordintate;
 }
 
+
 -(void)registerWithTouchDispatcher
 {
     [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self

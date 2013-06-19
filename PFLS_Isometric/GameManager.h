@@ -12,6 +12,9 @@
 @interface GameManager : NSObject
 {
     GameManagerViewController * _viewController;
+    GameLevel * _currentLevel;
+    NSArray * _gameLevels;
+    int _currentLevelIndex;
 }
 
 @property (readonly,retain) GameManagerViewController * viewController;
@@ -19,10 +22,8 @@
 
 +(GameManager *)sharedManager;
 
--(UIViewController *) startCocos2d;
-
 -(void) startGame;
 
--(void) runLevelWithID:(unsigned) theID;
+-(UIViewController *) setUpGame;
 
 @end

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="isometric" width="10" height="10" tilewidth="64" tileheight="32">
  <tileset firstgid="1" name="TileSet64" tilewidth="64" tileheight="32">
-  <image source="TileSet64.png" width="512" height="384"/>
+  <image source="./TileSet64.png" width="512" height="384"/>
  </tileset>
  <tileset firstgid="97" name="TileSetEdges64" tilewidth="64" tileheight="32">
-  <image source="TileSetEdges64.png" width="512" height="384"/>
+  <image source="./TileSetEdges64.png" width="512" height="384"/>
  </tileset>
  <layer name="Floor" width="10" height="10">
   <data encoding="base64" compression="zlib">
