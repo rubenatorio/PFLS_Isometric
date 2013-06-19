@@ -4,6 +4,7 @@
 //
 //  Created by Ruben Flores on 6/5/13.
 
+#import "LevelMenuViewController.h"
 #import "MainMenuViewController.h"
 #import "GameManager.h"
 
@@ -32,10 +33,9 @@
 
 - (IBAction)PlayGame:(id)sender
 {
-    UIViewController * viewController = [[GameManager sharedManager] startCocos2d];
-    
-    [self.navigationController pushViewController:viewController animated:YES];
-    
+    UIViewController *controller = [[GameManager sharedManager] startCocos2d];
+   
+    [self.navigationController pushViewController: controller animated: YES];
     //[[GameManager sharedManager] startGame];
     
 }

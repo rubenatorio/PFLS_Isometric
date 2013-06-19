@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="isometric" width="10" height="10" tilewidth="64" tileheight="32">
+ <tileset firstgid="1" name="TileSett" tilewidth="64" tileheight="32">
+  <image source="TileSet64.png" width="512" height="384"/>
+ </tileset>
+ <layer name="floor" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjZmBgYB7FgwYDAO5IAS0=
+  </data>
+ </layer>
+ <layer name="barriers" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxTZ8AO1LGI6eNQi0ucWBAGxdRShw9g8xcucVr5Fx8AAJQOArE=
+  </data>
+ </layer>
+ <objectgroup name="StartingPosition" width="10" height="10">
+  <object x="260" y="128" width="28" height="28"/>
+  <object x="282" y="141"/>
+ </objectgroup>
+</map>
