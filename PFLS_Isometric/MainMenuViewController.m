@@ -7,6 +7,7 @@
 #import "LevelMenuViewController.h"
 #import "MainMenuViewController.h"
 #import "GameManager.h"
+#import "OptionMenuViewController.h"
 
 @implementation MainMenuViewController
 
@@ -22,7 +23,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    //Force game to be loaded with touch set as default.
+    if((![GameManager sharedManager].isTouchEnabled)
+       &&
+       ![GameManager sharedManager].isControllerEnabled){
+        [GameManager sharedManager].isTouchEnabled = YES;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,6 +45,14 @@
     //[[GameManager sharedManager] startGame];
     
 }
+
+- (IBAction)EnterOptions:(id)sender {
+    
+    OptionMenuViewController *controller = [[OptionMenuViewController alloc] initWithNibName:@"OptionMenuViewController"bundle:nil];
+    
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
 - (void)dealloc {
     [super dealloc];
 }

@@ -14,6 +14,8 @@
 
 @synthesize viewController = _viewController;
 @synthesize currentLevel;
+@synthesize isControllerEnabled;
+@synthesize isTouchEnabled;
 
 static GameManager * _gameManager = nil;
 
@@ -37,9 +39,17 @@ static GameManager * _gameManager = nil;
     return _viewController;
 }
 
--(void) startGame
-{
+-(void) startGameWithControlOptions:(BOOL) isTouchOn{
+
     [[CCDirector sharedDirector] runWithScene:[IntroLayer scene]];
+    if (isTouchOn) {
+        self.isTouchEnabled = YES;
+        NSLog(@"Touch is on.");
+    }
+    else{
+        self.isControllerEnabled = YES;
+        NSLog(@"Controllers are on.");
+    }
 }
 
 -(void) runLevelWithID:(unsigned) theID

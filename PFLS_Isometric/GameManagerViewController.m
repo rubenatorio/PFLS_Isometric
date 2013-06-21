@@ -30,7 +30,7 @@
     
     NSLog(@"Adding the GL View to the main view...");
     
-    [[GameManager sharedManager] startGame];
+    [[GameManager sharedManager] startGameWithControlOptions:[GameManager sharedManager].isTouchEnabled];
     
     [self.view insertSubview:_glView atIndex:0];
 }

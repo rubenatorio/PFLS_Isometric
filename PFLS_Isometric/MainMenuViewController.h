@@ -9,5 +9,6 @@
 @interface MainMenuViewController : UIViewController
 
 - (IBAction)PlayGame:(id)sender;
+- (IBAction)EnterOptions:(id)sender;
 
 @end

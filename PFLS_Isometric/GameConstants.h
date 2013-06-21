@@ -16,12 +16,16 @@
 /* Game TMX file names  should be kLEVELNAME_MAP_NAME*/
 #define kTEST_LEVEL_MAP_NAME @"thomasmap.tmx"
 
+/* Tiled Map Layer names */
+#define kGROUND_LAYER   @"Floor"
+#define kBARRIERS_LAYER  @"Barriers"
+
 /* Game Touch dispatcher priorities */
 #define kPLAYER_PRIORITY 0
 #define kLEVEL_LAYER_PRIORITY 1
 
 /* Game Level id's */
 
-#define kTEST_LEVEL_ID 1000
+#define kTEST_LEVEL_ID 1
 
 #endif

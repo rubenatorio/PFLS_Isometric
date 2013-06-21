@@ -16,12 +16,14 @@
 
 @property (readonly,retain) GameManagerViewController * viewController;
 @property (readonly, assign) GameLevel * currentLevel;
+@property BOOL isTouchEnabled;
+@property BOOL isControllerEnabled;
 
 +(GameManager *)sharedManager;
 
 -(UIViewController *) startCocos2d;
 
--(void) startGame;
+-(void) startGameWithControlOptions:(BOOL) isTouchOn;
 
 -(void) runLevelWithID:(unsigned) theID;
 
