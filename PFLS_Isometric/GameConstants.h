@@ -14,7 +14,7 @@
 
 
 /* Game TMX file names  should be kLEVELNAME_MAP_NAME*/
-#define kTEST_LEVEL_MAP_NAME @"Seans Level.tmx"
+#define kTEST_LEVEL_MAP_NAME @"First Level.tmx"
 
 /* Tiled Map Layer names */
 #define kGROUND_LAYER   @"Floor"
