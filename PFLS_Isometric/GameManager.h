@@ -6,10 +6,11 @@
 
 #import <Foundation/Foundation.h>
 #import "GameLevel.h"
+#import "GameLevelDelegate.h"
 
 @class  GameManagerViewController;
 
-@interface GameManager : NSObject
+@interface GameManager : NSObject <GameLevelDelegate>
 {
     GameManagerViewController * _viewController;
     GameLevel * _currentLevel;
@@ -17,12 +18,10 @@
     int _currentLevelIndex;
 }
 
-@property (readonly,retain) GameManagerViewController * viewController;
-@property (readonly, assign) GameLevel * currentLevel;
+@property (retain) GameManagerViewController * viewController;
+@property (readonly) GameLevel * currentLevel;
 
 +(GameManager *)sharedManager;
-
--(void) startGame;
 
 -(UIViewController *) setUpGame;
 

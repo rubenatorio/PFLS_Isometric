@@ -9,3 +9,7 @@
 
 4) invidible tiles should not be considered when touching the screen
 
+5) Experiment with tile alpha so it is slightly translucent when player is behind
+
+6) invisible tiles should be touchable
+

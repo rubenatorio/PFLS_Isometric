@@ -12,7 +12,6 @@
 
 @implementation TestLevelLayer
 
-
 @synthesize player;
 
 +(CCScene *) sceneWithMapFile:(NSString *) mapName
@@ -84,7 +83,18 @@
 
 -(void) update:(ccTime) deltaTime
 {
+    [self checkConditions];
+}
 
+-(void) checkConditions
+{
+    CGPoint currentTile = [IsometricCoordinateConverter tilePosFromLocation:player.position tileMap:self.map];
+    
+    if (currentTile.x == 2 && currentTile.y == 5)
+    {
+        [self.delegate levelDidfinish];
+        [self unscheduleUpdate];
+    }
 }
 
 #pragma mark CCTouchDispatcherDelegate Methods

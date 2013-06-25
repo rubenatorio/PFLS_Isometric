@@ -11,7 +11,9 @@
 @protocol GameLevelDelegate <NSObject>
 
 @required
--(void) levelDidfinish:(unsigned)levelID;
+-(void) levelDidfinish;
+
+@optional
 -(void) playerLost:(unsigned) levelID;
 
 @end

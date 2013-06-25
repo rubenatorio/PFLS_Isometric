@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "GameLevelDelegate.h"
+
 
 /* Main Abstract class that all game levels should inherit from
    The custom initializer in this class sets up all the inherited instance variables
@@ -31,6 +33,9 @@
 @property (nonatomic, assign) BOOL mapDragged;
 /* stores the previous location where user touched to account for when scrolling the map */
 @property (nonatomic, assign) CGPoint previousTouchLocation;
+
+@property (nonatomic, retain) id<GameLevelDelegate> delegate;
+
 
 /* Initialize all instance properties with the given map file */
 -(id) initWithMapFile:(NSString *) mapFile;

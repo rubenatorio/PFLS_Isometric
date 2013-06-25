@@ -12,7 +12,9 @@
 @interface Player : CCSprite <CCTargetedTouchDelegate>
 
 /* Points to the layer containing this object, used for coordinate translation */
-@property (nonatomic, assign) CCLayer * owner;
+@property (nonatomic, retain) CCLayer * owner;
+
+//@property (assign) CGPoint currentTile;
 
 /* Create a player at the given tile coordinate, owner is needed to access map layers to translate coordinates */
 +(Player *) createPlayerAtTileCoordinate:(CGPoint) tileCoordinate withOwner:(CCLayer *) theOwner;

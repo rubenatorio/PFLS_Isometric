@@ -17,6 +17,8 @@
 @synthesize groundLayer;
 @synthesize mapDragged;
 @synthesize previousTouchLocation;
+@synthesize delegate;
+
 
 -(id) initWithMapFile:(NSString *)mapFile
 {
@@ -124,8 +126,8 @@
 -(void) dealloc
 {
     [mapName release];
-    [map release];
-    [groundLayer release];
+ //   [map release];
+ //   [groundLayer release];
     [super dealloc];
 }
 

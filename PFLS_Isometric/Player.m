@@ -11,13 +11,17 @@
 
 
 @implementation Player
+
 @synthesize  owner;
+//@synthesize currentTile;
 
 +(Player *) createPlayerAtTileCoordinate:(CGPoint) tileCoordinate withOwner:(CCLayer *) theOwner
 {
     Player * player = [[self alloc] initWithFile:@"Invader2.png"];
     
     [player setOwner:theOwner];
+    
+//    player.currentTile = tileCoordinate;
     
     TestLevelLayer * layer = (TestLevelLayer *) theOwner;
     
@@ -30,6 +34,7 @@
                                                        swallowsTouches:YES];
     return player;
 }
+
 
 -(void) moveToTile:(CGPoint) tileCoordinate
 {
@@ -53,6 +58,7 @@
         CGPoint delta = ccpSub(nextPos, currentPos);
         id moveBy = [CCMoveBy actionWithDuration:duration position:delta];
         [self runAction:moveBy];
+//        self.currentTile = tileCoordinate;
     }
 }
 
@@ -62,7 +68,9 @@
 {    
         TestLevelLayer * layer = (TestLevelLayer *) owner;
     
-        CGPoint touchLocation = [layer convertToMapCoordinate:[touch locationInView:touch.view]];
+        CGPoint touchLocationInView = [touch locationInView:touch.view];
+    
+        CGPoint touchLocation = [layer convertToMapCoordinate:touchLocationInView];
     
         if(CGRectContainsPoint(self.boundingBox, touchLocation))
         {
@@ -76,6 +84,7 @@
 //            CCLOG(@"Player Pos: <%.2f , %.2f>", self.position.x, self.position.y);
 //            CCLOG(@"Player Tile coord: < %d , %d >", (int)playerTile.x, (int)playerTile.y);
             CCLOG(@"Player Tapped!");
+ //           CCLOG(@"Tile coord: < %d , %d >", (int)currentTile.x, (int)currentTile.y);
             return YES;
         }
     

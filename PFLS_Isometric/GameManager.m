@@ -9,11 +9,12 @@
 #import "GameConstants.h"
 #import "TestLevelLayer.h"
 #import "IntroLayer.h"
+#import "AppDelegate.h"
 
-@implementation GameManager
+@implementation GameManager 
 
 @synthesize viewController = _viewController;
-@synthesize currentLevel;
+@synthesize currentLevel = _currentLevel;
 
 static GameManager * _gameManager = nil;
 
@@ -44,18 +45,53 @@ static GameManager * _gameManager = nil;
     [self runLevel];
 }
 
+-(void) advanceLevel
+{
+    int nextIndex = _currentLevelIndex + 1;
+    
+    NSLog(@"%@", _gameLevels);
+    
+    int levelCount = [_gameLevels count];
+    
+    if (nextIndex >= levelCount)
+    {
+        [self gameOver];
+        return;
+    }
+    
+    _currentLevelIndex = nextIndex;
+    
+    [self runLevel];
+}
+
+-(void) gameOver
+{
+    CCLOG(@"********************** GAME OVER ********************************");
+    
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(popToMainMenu) userInfo:nil repeats:NO];
+}
+
+-(void) popToMainMenu
+{
+    AppController * appDelegate = (AppController *) [[UIApplication sharedApplication] delegate];
+    
+    [appDelegate.navController popToRootViewControllerAnimated:YES];
+}
+
 -(void) loadLevels
 {
     NSString *path = [[NSBundle mainBundle]pathForResource:@"GameLevels" ofType:@"plist"];
     
-    _gameLevels = [NSArray arrayWithContentsOfFile:path];
+  //  _gameLevels = [NSArray arrayWithContentsOfFile:path];
+    
+    _gameLevels = [[NSArray alloc] initWithContentsOfFile:path];
     
     NSLog(@"%@", _gameLevels);
 }
 
 -(void) runLevel
 {
-    NSAssert(_currentLevelIndex < [_gameLevels count], @"level index out of bouds");
+    NSAssert(_currentLevelIndex < [_gameLevels count] || _currentLevelIndex < 0, @"level index out of bouds");
     
     NSDictionary * levelConfig = [_gameLevels objectAtIndex:_currentLevelIndex];
     
@@ -65,22 +101,42 @@ static GameManager * _gameManager = nil;
     
     _currentLevel = [[[TestLevelLayer alloc] initWithMapFile:mapName] autorelease];
     
+    [_currentLevel setDelegate:self];
+    
     CCScene * levelScene = [CCScene node];
     
     [levelScene addChild:_currentLevel];
     
-    [[CCDirector sharedDirector] runWithScene:levelScene]; //display the load screen
+    if (_currentLevelIndex == 0)
+        [[CCDirector sharedDirector] runWithScene:levelScene]; //display the load screen
+    else
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:levelScene withColor:ccWHITE]];
 }
 
 -(UIViewController *) setUpGame
 {
+    static BOOL _setUp = NO;
+    
+   if (_setUp)
+       return _viewController;
+       
    [self loadLevels];
     
    UIViewController * gameView =  [self startCocos2d];
     
    [self startGame];
     
+    _setUp = YES;
+    
    return gameView;
+}
+
+#pragma mark GameLevelDelegat
+
+-(void) levelDidfinish
+{
+    CCLOG(@"************************* Level Did Finish ********************");
+    [self advanceLevel];
 }
 
 #pragma mark Memory Management
