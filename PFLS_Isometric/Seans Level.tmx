@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="isometric" width="20" height="20" tilewidth="64" tileheight="32">
  <tileset firstgid="1" name="1" tilewidth="128" tileheight="128">
-  <image source="isometricTileset_2.png" trans="ff00ff" width="860" height="762"/>
+  <image source="../../../../Downloads/isometricTileset_2.png" trans="ff00ff" width="860" height="762"/>
  </tileset>
  <tileset firstgid="31" name="Main" tilewidth="64" tileheight="32">
   <image source="iso-64x64-outside.png" trans="ff00ff" width="640" height="1024"/>
@@ -9,44 +9,34 @@
  <tileset firstgid="351" name="main2" tilewidth="64" tileheight="32">
   <image source="iso-64x64-outside.png" width="640" height="1024"/>
  </tileset>
- <layer name="Floor" width="20" height="20">
+ <layer name="Tile Layer 1" width="20" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYMAOshjJw8j6qWUeutnUcB+1/TtSzBsueA4QrxwE7hjFo3goYwDonJdV
+   eJwTYmJgyGJkYBBkQmBFqBg5WIAJlc0LxNyDzDyYP5WpZB4vGh5M5vEA9XKhYU4KzBsueA4QrxwE7hjFo3goYwC4zpqT
   </data>
  </layer>
- <layer name="Barriers" width="20" height="20">
+ <layer name="Tile Layer 2" width="20" height="20">
   <data encoding="base64" compression="zlib">
-   eJxTYmJgEETD/EBMDIhjQuAAqB4BIH2FkYHhMRDzMkEwN5HmIYMoJggGmXeBCuaBQAHUPF40TKp54UzUNQ8EEpHCj1LzQGbNZYLQPEDMhYY5yTAPhqkB3JgQmBiwFhj3a6B4FSNh9WsYMTGyvtVA9koofzkR5q1kRMXo+lYA2cugeCkVzCMV0NI8GKCmebuJDCdizAPhXYzUDb+VRJh3FI88OeaBwHkcasg17xyVzcMGAHBdPpw=
+   eJxjYCAfxDEhcAATQvwKIwPDY0YKDAaCKCYIBoELVDAPBAqYCKshBoQzUdc8EEjEYhYvmeaDzJrLhN1Mcs1LpKJ5bkwITAxYC4z7NVC8ioh0sIYREyPrWw1kr4TylxNh3kpGVIyubwWQvQyKl1LBPFIBLc2DAWqat5vIcCLGPBDexUjd8FtJhHlH8ciTYx4InMehhlzzzlHZPGwAAFALPFY=
   </data>
  </layer>
- <layer name="Layer 3" width="20" height="20">
+ <layer name="Tile Layer 3" width="20" height="20">
   <data encoding="base64" compression="zlib">
    eJw7xcjAcBuIqQWOAc26SaF5AUwMDGlM1HEPDFDbvClUMi8caM5kJgidSAUzw5kQmBrAhgmBSQGLgGlgARHpAKQOHSPrWwhkz4fiuUSYN58REyPrmwdkz4Hi2VQwj1Qw1MzbSGQ4EWveBiLTBbHmDfbwI9a8IzjUUNt91AYARyM4zg==
   </data>
  </layer>
- <layer name="Layer 4" width="20" height="20">
+ <layer name="Tile Layer 4" width="20" height="20">
   <data encoding="base64" compression="zlib">
    eJxjYKAcxDBRwRAamtdFRfM6oWaFU8HMDir7cziDr4wD7YJRMFzBWmDaWkXF9LUCaNbSEZJeAZv3BlU=
   </data>
  </layer>
- <layer name="Layer 5" width="20" height="20">
+ <layer name="Tile Layer 5" width="20" height="20">
   <data encoding="base64" compression="zlib">
    eJxjYBhcoIGJembVU9GsOiqaNdzBa8aBdsEoGM5gARXT1zygWbNH0yvZAABLuARM
   </data>
  </layer>
- <layer name="Layer 6" width="20" height="20">
+ <layer name="Tile Layer 6" width="20" height="20">
   <data encoding="base64" compression="zlib">
    eJxjYCAflDFRoBkNlFLRrBIqmjUKRsEoGAWjADsAAADiAWY=
   </data>
  </layer>
- <objectgroup name="StartingPosition" width="20" height="20">
-  <object x="272" y="151"/>
-  <object name="Start" x="257" y="153" width="30" height="46">
-   <properties>
-    <property name="TileX" value="8"/>
-    <property name="TileY" value="4"/>
-   </properties>
-  </object>
-  <object x="270" y="175"/>
- </objectgroup>
 </map>
