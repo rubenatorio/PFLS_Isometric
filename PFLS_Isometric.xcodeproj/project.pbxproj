@@ -14,6 +14,8 @@
 		D01B8F4F17723BF000144332 /* TileSet128.png in Resources */ = {isa = PBXBuildFile; fileRef = D01B8F4C17723BF000144332 /* TileSet128.png */; };
 		D01B8F5117723C0C00144332 /* TileSetEdges64.png in Resources */ = {isa = PBXBuildFile; fileRef = D01B8F5017723C0C00144332 /* TileSetEdges64.png */; };
 		D01B8F5B17723FA400144332 /* thomasmap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = D01B8F5A17723FA400144332 /* thomasmap.tmx */; };
+		D03719021774D07B0088A7CD /* MovementController.png in Resources */ = {isa = PBXBuildFile; fileRef = D03719001774D07B0088A7CD /* MovementController.png */; };
+		D03719031774D07B0088A7CD /* WeaponController.png in Resources */ = {isa = PBXBuildFile; fileRef = D03719011774D07B0088A7CD /* WeaponController.png */; };
 		D061EFB1176FD23500DED63D /* LevelMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D061EFB0176FD23500DED63D /* LevelMenuViewController.xib */; };
 		D061EFB4176FD27A00DED63D /* LevelMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D061EFB3176FD27A00DED63D /* LevelMenuViewController.m */; };
 		D0EC0F91177280420079E1CE /* OptionMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EC0F90177280420079E1CE /* OptionMenuViewController.xib */; };
@@ -164,6 +166,8 @@
 		D01B8F4C17723BF000144332 /* TileSet128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TileSet128.png; sourceTree = "<group>"; };
 		D01B8F5017723C0C00144332 /* TileSetEdges64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TileSetEdges64.png; sourceTree = "<group>"; };
 		D01B8F5A17723FA400144332 /* thomasmap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = thomasmap.tmx; sourceTree = "<group>"; };
+		D03719001774D07B0088A7CD /* MovementController.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MovementController.png; sourceTree = "<group>"; };
+		D03719011774D07B0088A7CD /* WeaponController.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WeaponController.png; sourceTree = "<group>"; };
 		D061EFB0176FD23500DED63D /* LevelMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LevelMenuViewController.xib; sourceTree = "<group>"; };
 		D061EFB2176FD27900DED63D /* LevelMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelMenuViewController.h; sourceTree = "<group>"; };
 		D061EFB3176FD27A00DED63D /* LevelMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelMenuViewController.m; sourceTree = "<group>"; };
@@ -562,6 +566,8 @@
 				D01B8F5017723C0C00144332 /* TileSetEdges64.png */,
 				D01B8F4A17723BF000144332 /* TileSet.png */,
 				D01B8F4B17723BF000144332 /* TileSet64.png */,
+				D03719001774D07B0088A7CD /* MovementController.png */,
+				D03719011774D07B0088A7CD /* WeaponController.png */,
 				D01B8F4C17723BF000144332 /* TileSet128.png */,
 				E04012DE175FDE5400AF0081 /* FlyingLaserShark.jpg */,
 				E0A7D01D174EBBA300C7D631 /* Invader2.png */,
@@ -1079,6 +1085,8 @@
 				D01B8F5117723C0C00144332 /* TileSetEdges64.png in Resources */,
 				D01B8F5B17723FA400144332 /* thomasmap.tmx in Resources */,
 				D0EC0F91177280420079E1CE /* OptionMenuViewController.xib in Resources */,
+				D03719021774D07B0088A7CD /* MovementController.png in Resources */,
+				D03719031774D07B0088A7CD /* WeaponController.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,19 +13,27 @@
 #import "GameConstants.h"
 #import "GameTypes.h"
 #import "Player.h"
+#import "SneakyButton.h"
+
 
 @interface TestLevelLayer : GameLevel
 {
     TileDirection currentTouchDirection;
     CCTMXLayer * barrierLayer;
+    SneakyButton *attackController;
+    SneakyButton *movementController;
+
 }
 
 /* Used to test collisions */
 @property (nonatomic, assign) Player * player;
 
+
 /* Returns a scene for the CCDirector to run */
++(CCScene *) sceneWithCustomControls:(BOOL) isTouch;
 +(CCScene *) scene;
 
 -(TileDirection) tileDirectionFromTile:(CGPoint) tileCoor;
+-(id) initWithCustomControls:(BOOL) isTouch;
 
 @end

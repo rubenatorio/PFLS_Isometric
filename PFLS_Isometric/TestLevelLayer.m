@@ -15,12 +15,22 @@
 
 @synthesize player;
 
-
-+(CCScene *) scene
-{
++(CCScene *) scene{
 	CCScene *scene = [CCScene node];
 	
 	TestLevelLayer *layer = [TestLevelLayer node];
+	
+	[scene addChild: layer];
+	
+	return scene;
+}
+
+
++(CCScene *) sceneWithCustomControls:(BOOL) isTouch
+{
+	CCScene *scene = [CCScene node];
+	
+	TestLevelLayer *layer = [[TestLevelLayer alloc] initWithCustomControls:isTouch];
 	
 	[scene addChild: layer];
 	
@@ -53,6 +63,56 @@
     }
     
     return self;
+}
+
+//default init >
+//Should be called instead of reg init, allows option for custom controls (controllers or touch).
+-(id) initWithCustomControls:(BOOL) isTouch {
+    
+    if( (self = [super initWithMapFile:kTEST_LEVEL_MAP_NAME]) )
+    {
+        barrierLayer = [self.map layerNamed:kBARRIERS_LAYER];
+        
+        if(!isTouch){
+        
+            //init controller buttons.
+            NSLog(@"Controllers init.");
+        }
+        else{
+            NSLog(@"Touch is setup.");
+        }
+        
+        /* PLAYER TEST */
+        
+        CCTMXObjectGroup *positions = [self.map objectGroupNamed:@"StartingPosition"];
+        NSAssert(positions, @"No initial position set");
+        
+        NSDictionary * startPoint = [positions objectNamed:@"Start"];
+        
+        CCLOG(@"Start Tile <%@,%@>",startPoint[@"TileX"], startPoint[@"TileY"]);
+        
+        CGPoint startTile = ccp([startPoint[@"TileX"] integerValue], [startPoint[@"TileY"] integerValue]);
+        
+        player = [Player createPlayerAtTileCoordinate:startTile withOwner:self];
+        
+        [self.map addChild:player];
+        
+        /* Get updated everytime a frame is to be rendered */
+        [self scheduleUpdate];
+    }
+    
+    return self;
+}
+
+-(void) initControllerButtons{
+  //  CGRect controllerRect = CGRectMake(0, 0, 128.0f, 128.0f);
+   // CGPoint movementControllerPosition;
+   // CGPoint attackControllerPosition;
+    
+  //  movementControllerPosition = ccp([CCDirector sharedDirector].winSize.width * .7f, [CCDirector sharedDirector].winSize.height * .7f);
+   // attackControllerPosition = ccp([CCDirector sharedDirector].winSize.width *.3f, [CCDirector sharedDirector].winSize.height *.7f);
+    
+    
 }
 
 -(void) update:(ccTime) deltaTime

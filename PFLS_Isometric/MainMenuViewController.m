@@ -51,6 +51,9 @@
     OptionMenuViewController *controller = [[OptionMenuViewController alloc] initWithNibName:@"OptionMenuViewController"bundle:nil];
     
     [self.navigationController pushViewController:controller animated:YES];
+    
+    [controller release];
+    
 }
 
 - (void)dealloc {

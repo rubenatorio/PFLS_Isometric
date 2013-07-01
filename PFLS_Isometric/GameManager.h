@@ -12,6 +12,7 @@
 @interface GameManager : NSObject
 {
     GameManagerViewController * _viewController;
+    CGSize screenSize;
 }
 
 @property (readonly,retain) GameManagerViewController * viewController;

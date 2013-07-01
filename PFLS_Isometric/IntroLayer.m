@@ -10,7 +10,7 @@
 // Import the interfaces
 #import "IntroLayer.h"
 #import "TestLevelLayer.h"
-
+#import "GameManager.h"
 
 #pragma mark - IntroLayer
 
@@ -59,6 +59,6 @@
 
 -(void) makeTransition:(ccTime)dt
 {
-	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[TestLevelLayer scene] withColor:ccWHITE]];
+	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[TestLevelLayer sceneWithCustomControls: [GameManager sharedManager].isTouchEnabled] withColor:ccWHITE]];
 }
 @end

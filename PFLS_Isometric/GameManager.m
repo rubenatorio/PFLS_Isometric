@@ -13,6 +13,7 @@
 @implementation GameManager
 
 @synthesize viewController = _viewController;
+
 @synthesize currentLevel;
 @synthesize isControllerEnabled;
 @synthesize isTouchEnabled;
@@ -22,7 +23,6 @@ static GameManager * _gameManager = nil;
 +(GameManager *)sharedManager
 {
     if (!_gameManager) _gameManager = [[self alloc] init];
-    
     return _gameManager;
 }
 
@@ -59,7 +59,7 @@ static GameManager * _gameManager = nil;
     switch (theID)
     {
         case kTEST_LEVEL_ID:
-            gameLevel = [TestLevelLayer scene];
+            gameLevel = [TestLevelLayer sceneWithCustomControls:self.isTouchEnabled];
             break;
             
         default:
